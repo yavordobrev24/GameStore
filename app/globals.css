@@ -3,15 +3,26 @@
 @tailwind utilities;
 @refresh;
 .slider {
-  @apply h-screen relative left-0 m-0;
+  @apply h-[80vh] relative left-0 m-0;
   width: 400%;
   animation: slide 20s infinite alternate;
 }
 .slider-item {
   float: left;
   width: 25%;
-  height: 90%;
+  height: 100%;
   float: left;
+}
+.card .img-holder {
+  width: 14rem;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+.card img {
+  transition: all 0.3s;
+}
+.card:hover img {
+  transform: scale(1.15);
 }
 @keyframes slide {
   0% {
