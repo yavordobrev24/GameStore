@@ -1,3 +1,12 @@
+import {
+  faFutbol,
+  faGun,
+  faHandFist,
+  faIcicles,
+  faMagnifyingGlass,
+  faMap,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
 export default function Home() {
@@ -16,7 +25,7 @@ export default function Home() {
         />
         <img
           className="slider-item"
-          src="https://assets.xboxservices.com/assets/0b/17/0b179504-412d-4af7-9e00-3e3d92633577.jpg?n=GTA-V_GLP-Page-Hero-1084_1920x1080.jpg"
+          src="https://image.api.playstation.com/vulcan/ap/rnd/202203/0911/VIB0SeEj9vT6DTv7P4thJLZi.jpg"
           alt=""
         />
         <img
@@ -25,9 +34,9 @@ export default function Home() {
           alt=""
         />
       </section>
-      <section className="flex flex-col items-center px-[10rem] py-[2rem]">
-        <h3 className="text-4xl font-bold self-start">New</h3>
-        <ul className="flex gap-10 mt-10">
+      <section className="flex flex-col items-center py-[2rem] main-section">
+        <h3 className="text-4xl font-bold">New</h3>
+        <ul className="flex gap-10 mt-10 flex-wrap">
           <li className="card">
             <Link href="">
               <div className="img-holder">
@@ -85,6 +94,27 @@ export default function Home() {
             </Link>
           </li>
         </ul>
+      </section>
+      <section className="flex flex-col main-section py-[2rem] items-center">
+        <h3 className="text-4xl font-bold">Categories</h3>
+        <div className="icon-cards flex flex-wrap gap-10 mt-11">
+          <Link href="/games/action">
+            <FontAwesomeIcon icon={faGun} />
+            Action
+          </Link>
+          <Link href="/games/sport">
+            <FontAwesomeIcon icon={faFutbol} />
+            Sport
+          </Link>
+          <Link href="/games/adventure">
+            <FontAwesomeIcon icon={faMap} />
+            Adventure
+          </Link>
+          <Link href="/games/fighting">
+            <FontAwesomeIcon icon={faHandFist} />
+            Fighting
+          </Link>
+        </div>
       </section>
     </main>
   );

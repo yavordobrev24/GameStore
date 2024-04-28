@@ -24,6 +24,47 @@
 .card:hover img {
   transform: scale(1.15);
 }
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.form-section input {
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 1rem 1.2rem;
+  width: 20vw;
+}
+.btn {
+  padding: 1em 2em;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  transition: transform 100ms;
+}
+.btn:hover {
+  transform: scale(1.01);
+}
+.main-section {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.icon-cards > a {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  color: white;
+  padding: 1rem 3rem;
+  border-radius: 8px;
+  gap: 1rem;
+  transition: transform 100ms;
+}
+.icon-cards > a:hover {
+  transform: scale(1.05);
+}
+.icon-cards > a > svg {
+  font-size: 2.4rem;
+}
 @keyframes slide {
   0% {
     left: 0;

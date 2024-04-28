@@ -1,4 +1,4 @@
-export default function Products() {
+export default function Games() {
   return (
     <main className="flex-1">
       <h2>Products</h2>

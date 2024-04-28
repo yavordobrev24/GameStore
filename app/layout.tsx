@@ -27,10 +27,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex flex-col min-h-screen mt-[6rem]">
-        <header className="fixed top-0 z-10 bg-secondary w-full px-[10rem] py-[2rem] shadow-lg">
+        <header className="fixed top-0 z-10 bg-secondary w-full px-[10rem] py-[2rem] shadow-md">
           <nav className="flex justify-between">
-            <p className="font-bold text-2xl">
-              <Link href="/">GameStore</Link>
+            <p className="font-bold text-2xl ">
+              <Link href="/">
+                Game<span className="text-red-500">Store</span>
+              </Link>
             </p>
             <ul className="flex gap-3 text-lg">
               <li>
@@ -40,7 +42,7 @@ export default function RootLayout({
                 />
               </li>
               <li>
-                <Link href="/user">
+                <Link href="/user/login">
                   <FontAwesomeIcon icon={faUser} className="text-2xl" />
                 </Link>
               </li>
@@ -57,8 +59,12 @@ export default function RootLayout({
           <nav>
             <h2 className="text-lg font-bold">Sitemap</h2>
             <ul>
-              <li>Categories</li>
-              <li>Products</li>
+              <li>
+                <Link href="/categories">Categories</Link>
+              </li>
+              <li>
+                <Link href="/games">Games</Link>
+              </li>
             </ul>
           </nav>
         </footer>
