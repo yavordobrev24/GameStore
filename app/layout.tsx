@@ -34,13 +34,17 @@ export default function RootLayout({
                 Game<span className="text-red-500">Store</span>
               </Link>
             </p>
-            <ul className="flex gap-3 text-lg">
-              <li>
+            <div>
+              <input type="text" className="searchbar" />
+              <button>
                 <FontAwesomeIcon
                   icon={faMagnifyingGlass}
-                  className="text-2xl"
+                  className="text-2xl mx-2"
                 />
-              </li>
+              </button>
+            </div>
+
+            <ul className="flex gap-3 text-lg">
               <li>
                 <Link href="/user/login">
                   <FontAwesomeIcon icon={faUser} className="text-2xl" />
