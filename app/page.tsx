@@ -11,7 +11,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="overflow-hidden flex-1">
+    <main className="main-section overflow-hidden flex-1">
       <section className="slider shadow-lg">
         <img
           className="slider-item"
@@ -20,7 +20,7 @@ export default function Home() {
         />
         <img
           className="slider-item"
-          src="https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70070000016597/4dc8ab1f09ced6fb2953b2caedd978c1f23df33b62305bcf3140308962073d57"
+          src="https://www.minecraft.net/content/dam/games/minecraft/key-art/Vanilla-PMP_Collection-Carousel-0_Update-Aquatic_1280x768.jpg"
           alt=""
         />
         <img
@@ -30,7 +30,7 @@ export default function Home() {
         />
         <img
           className="slider-item"
-          src="https://cdn.alza.cz/Foto/ImgGalery/Image/ea-sports-fc-24-cover_1.jpg"
+          src="https://image.api.playstation.com/vulcan/ap/rnd/202311/2015/45ab1e741439ba2e06782cfc09cd4e57467d436c5b84bc79.jpg"
           alt=""
         />
       </section>

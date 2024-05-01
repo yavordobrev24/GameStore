@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "GameStore",
   description: "Online store for video games",
 };
-
+async function searchGame() {}
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -31,15 +31,20 @@ export default function RootLayout({
           <nav className="flex justify-between">
             <p className="font-bold text-2xl ">
               <Link href="/">
-                Game<span className="text-red-500">Store</span>
+                Game<span className="text-purple-600">Store</span>
               </Link>
             </p>
             <div>
-              <input type="text" className="searchbar" />
+              <input
+                type="text"
+                className="searchbar"
+                placeholder="What is your favorite game?"
+              />
               <button>
                 <FontAwesomeIcon
                   icon={faMagnifyingGlass}
-                  className="text-2xl mx-2"
+                  className="mx-2"
+                  /*onClick={searchGame}*/
                 />
               </button>
             </div>
