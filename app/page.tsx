@@ -2,14 +2,23 @@ import {
   faFutbol,
   faGun,
   faHandFist,
-  faIcicles,
-  faMagnifyingGlass,
   faMap,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
-export default function Home() {
+async function getGames() {
+  const res = await fetch("http://localhost:8000/games");
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  return res.json();
+}
+
+export default async function Home() {
+  const games = await getGames();
+
   return (
     <main className="main-section overflow-hidden flex-1">
       <section className="slider shadow-lg">
@@ -37,62 +46,21 @@ export default function Home() {
       <section className="flex flex-col items-center py-[2rem] main-section">
         <h3 className="text-4xl font-bold">New</h3>
         <ul className="flex gap-10 mt-10 flex-wrap">
-          <li className="card">
-            <Link href="">
-              <div className="img-holder">
-                <img
-                  src="https://image.api.playstation.com/vulcan/ap/rnd/202308/0312/aff71a0ced271048f5079b1fcf715bcb45110efc13e9704a.png"
-                  alt=""
-                />
-              </div>
-              <div className="text-center">
-                <p>Tekken 8</p>
-                <p className="font-bold">$59.99</p>
-              </div>
-            </Link>
-          </li>
-          <li className="card">
-            <Link href="">
-              <div className="img-holder">
-                <img
-                  src="https://image.api.playstation.com/vulcan/ap/rnd/202310/0214/b449973c0d7f4afc176aa1debb996b472718ce0f4175e02b.png"
-                  alt=""
-                />
-              </div>
-              <div className="text-center">
-                <p>FIFA 24</p>
-                <p className="font-bold">$49.99</p>
-              </div>
-            </Link>
-          </li>
-          <li className="card">
-            <Link href="">
-              <div className="img-holder">
-                <img
-                  src="https://image.api.playstation.com/vulcan/ap/rnd/202312/0606/38d36a1367cfd91ed3fed52510c7569a9c8bf5da3f66a1e6.png"
-                  alt=""
-                />
-              </div>
-              <div className="text-center">
-                <p>Rise of the Ronin</p>
-                <p className="font-bold">$69.99</p>
-              </div>
-            </Link>
-          </li>
-          <li className="card">
-            <Link href="">
-              <div className="img-holder">
-                <img
-                  src="https://m.media-amazon.com/images/I/8140Oo7VT7L._AC_UF1000,1000_QL80_.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="text-center">
-                <p>NBA 2K24</p>
-                <p className="font-bold">$21.99</p>
-              </div>
-            </Link>
-          </li>
+          {Object.entries(games)
+            .slice(-4)
+            .map(([key, value]: any) => (
+              <li className="card" key={key}>
+                <Link href={`/games/${key}`}>
+                  <div className="img-holder">
+                    <img src={value.imageUrl} alt={value.name} />
+                  </div>
+                  <div className="text-center">
+                    <p>{value.name}</p>
+                    <p className="font-bold">${value.price}</p>
+                  </div>
+                </Link>
+              </li>
+            ))}
         </ul>
       </section>
       <section className="flex flex-col main-section py-[2rem] items-center">
