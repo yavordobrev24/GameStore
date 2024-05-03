@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex flex-col min-h-screen mt-[6rem]">
-        <header className="fixed top-0 z-10 bg-secondary w-full px-[10rem] py-[2rem] shadow-md">
+        <header className="fixed top-0 z-10 bg-secondary w-full px-[10rem] py-[2rem] border-b-[1px] border-gray-300">
           <nav className="flex justify-between">
             <p className="font-bold text-2xl ">
               <Link href="/">
@@ -64,7 +64,7 @@ export default function RootLayout({
           </nav>
         </header>
         {children}
-        <footer className=" bg-primary text-secondary px-[10rem] p-[3rem] w-full shadow-lg">
+        <footer className=" bg-primary text-secondary px-[10rem] p-[3rem] w-full border-t-[1px] border-gray-300">
           <nav>
             <h2 className="text-lg font-bold">Sitemap</h2>
             <ul>

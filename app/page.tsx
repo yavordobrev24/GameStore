@@ -21,7 +21,7 @@ export default async function Home() {
 
   return (
     <main className="main-section overflow-hidden flex-1">
-      <section className="slider shadow-lg">
+      <section className="slider shadow-md">
         <img
           className="slider-item"
           src="https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000012332/ac4d1fc9824876ce756406f0525d50c57ded4b2a666f6dfe40a6ac5c3563fad9"
@@ -29,7 +29,7 @@ export default async function Home() {
         />
         <img
           className="slider-item"
-          src="https://www.minecraft.net/content/dam/games/minecraft/key-art/Vanilla-PMP_Collection-Carousel-0_Update-Aquatic_1280x768.jpg"
+          src="https://www.nintendo.com/eu/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_Minecraft.jpg"
           alt=""
         />
         <img
