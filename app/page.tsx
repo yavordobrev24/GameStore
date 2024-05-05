@@ -6,21 +6,21 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-
+import pool from "../db/db";
+import GameCard from "./components/gameCard";
+import { Game } from "@/types";
 async function getGames() {
-  const res = await fetch("http://localhost:8000/games");
+  const res = await pool.query("SELECT * FROM games;");
+  console.log("Get games", res.rows);
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-  return res.json();
+  return res.rows;
 }
 
 export default async function Home() {
   const games = await getGames();
 
   return (
-    <main className="main-section overflow-hidden flex-1">
+    <main className="overflow-hidden flex-1">
       <section className="slider shadow-md">
         <img
           className="slider-item"
@@ -46,21 +46,9 @@ export default async function Home() {
       <section className="flex flex-col items-center py-[2rem] main-section">
         <h3 className="text-4xl font-bold">New</h3>
         <ul className="flex gap-10 mt-10 flex-wrap">
-          {Object.entries(games)
-            .slice(-4)
-            .map(([key, value]: any) => (
-              <li className="card" key={key}>
-                <Link href={`/games/${key}`}>
-                  <div className="img-holder">
-                    <img src={value.imageUrl} alt={value.name} />
-                  </div>
-                  <div className="text-center">
-                    <p>{value.name}</p>
-                    <p className="font-bold">${value.price}</p>
-                  </div>
-                </Link>
-              </li>
-            ))}
+          {games.slice(-4).map((value: Game) => (
+            <GameCard key={value.id} game={value} />
+          ))}
         </ul>
       </section>
       <section className="flex flex-col main-section py-[2rem] items-center">

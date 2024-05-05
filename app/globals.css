@@ -3,7 +3,10 @@
 @tailwind utilities;
 @refresh;
 .slider {
-  @apply h-[80vh] relative left-0 m-0;
+  height: 85vh;
+  position: relative;
+  left: 0;
+  margin: 0;
   width: 400%;
   animation: slide 20s infinite alternate;
 }
@@ -12,6 +15,7 @@
   width: 25%;
   height: 100%;
   float: left;
+  object-position: center;
 }
 .card .img-holder {
   width: 14rem;
@@ -130,7 +134,7 @@ input[type="number"]::-webkit-outer-spin-button {
   padding: 0.5rem;
 }
 .details-content .quantity input {
-  width: 30px;
+  width: 45px;
   outline: none;
   text-align: center;
 }

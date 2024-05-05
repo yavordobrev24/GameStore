@@ -8,8 +8,6 @@ export default function Login() {
 
   const handleLogin = async (e: any) => {
     e.preventDefault();
-    console.log("trying to login");
-    console.log(email, password);
   };
   return (
     <main className="flex-1 flex flex-col mx-auto justify-center gap-2 item">
