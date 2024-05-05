@@ -1,30 +1,19 @@
 "use client";
+import { register } from "@/app/actions";
 import Link from "next/link";
-import { useState } from "react";
+import { useFormState } from "react-dom";
 
-export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+export default function Register() {
+  const [state, action] = useFormState(register, undefined);
 
-  const handleRegister = async (e: any) => {
-    e.preventDefault();
-    console.log("trying to register");
-    console.log(email, password);
-  };
   return (
     <main className="flex-1 flex flex-col mx-auto justify-center gap-2 item">
       <h2 className="text-3xl text-center">Register</h2>
-      <form className="flex flex-col gap-3">
+      <form className="flex flex-col gap-3" action={action}>
         <section className=" form-section">
           <label htmlFor="email">Email</label>
-          <input
-            type="text"
-            id="email"
-            name="password"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+          <input type="text" id="email" name="email" placeholder="Email" />
+          {state?.errors?.email && <p>{state.errors.email}</p>}
         </section>
         <section className="form-section">
           <label htmlFor="password">Password</label>
@@ -33,13 +22,19 @@ export default function Login() {
             id="password"
             name="password"
             placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
           />
+          {state?.errors?.password && (
+            <div>
+              <p>Password must:</p>
+              <ul>
+                {state.errors.password.map((error) => (
+                  <li key={error}>- {error}</li>
+                ))}
+              </ul>
+            </div>
+          )}
         </section>
-        <button className="btn" onClick={handleRegister}>
-          Register
-        </button>
+        <button className="btn">Register</button>
       </form>
       <Link href="/user/login" className="w-fit">
         <p className="text-primary hover:underline ">

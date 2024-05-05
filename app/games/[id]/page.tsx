@@ -1,7 +1,7 @@
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import pool from "../../../db/db";
 import Quantity from "@/app/components/quantity";
-import { Game } from "@/types";
+import { Game } from "@/app/lib/definitions";
 async function getGame(gameId: number) {
   const res = await pool.query("SELECT * FROM games WHERE id = $1", [gameId]);
   return res.rows[0];

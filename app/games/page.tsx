@@ -1,4 +1,4 @@
-import { Game } from "@/types";
+import { Game } from "../lib/definitions";
 import GameCard from "../components/gameCard";
 import pool from "@/db/db";
 async function getGames() {

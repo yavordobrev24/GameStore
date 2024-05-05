@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import pool from "../db/db";
 import GameCard from "./components/gameCard";
-import { Game } from "@/types";
+import { Game } from "./lib/definitions";
 async function getGames() {
   const res = await pool.query("SELECT * FROM games;");
   console.log("Get games", res.rows);
