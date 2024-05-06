@@ -5,7 +5,7 @@ import { FormState, SignupFormSchema } from "./lib/definitions";
 import { redirect } from "next/navigation";
 import { createSession, deleteSession } from "./lib/session";
 
-export const login = async (formData: FormData) => {
+export const login = async (state: FormState, formData: FormData) => {
   const email = formData.get("email");
   const password = formData.get("password");
   try {

@@ -7,7 +7,7 @@ export default function NotFound() {
       <p className="text-xl mb-5">
         The page you were looking for does not exist.
       </p>
-      <Link href="/products" className="mx-auto">
+      <Link href="/games" className="mx-auto">
         <button className="bg-primary rounded-md text-secondary px-8 py-3 text-xl">
           Continue shopping
         </button>

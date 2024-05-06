@@ -11,7 +11,6 @@ import { logout } from "../actions";
 
 export default async function Header() {
   const session = await getSession();
-  console.log("session", session);
 
   return (
     <header className="fixed top-0 z-10 bg-secondary w-full px-[10rem] py-[2rem] border-b-[1px] border-gray-300">
@@ -44,7 +43,6 @@ export default async function Header() {
               </Link>
             </li>
           )}
-
           {session && (
             <>
               <form action={logout}>
@@ -55,13 +53,13 @@ export default async function Header() {
                   />
                 </button>
               </form>
-              <li>
-                <Link href="/cart">
-                  <FontAwesomeIcon icon={faCartShopping} className="text-2xl" />
-                </Link>
-              </li>
             </>
           )}
+          <li>
+            <Link href="/cart">
+              <FontAwesomeIcon icon={faCartShopping} className="text-2xl" />
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>

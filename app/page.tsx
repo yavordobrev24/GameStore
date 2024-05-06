@@ -11,8 +11,6 @@ import GameCard from "./components/gameCard";
 import { Game } from "./lib/definitions";
 async function getGames() {
   const res = await pool.query("SELECT * FROM games;");
-  console.log("Get games", res.rows);
-
   return res.rows;
 }
 

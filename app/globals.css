@@ -138,6 +138,9 @@ input[type="number"]::-webkit-outer-spin-button {
   outline: none;
   text-align: center;
 }
+.error {
+  color: rgb(182, 44, 44);
+}
 @keyframes slide {
   0% {
     left: 0;

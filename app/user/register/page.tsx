@@ -13,7 +13,10 @@ export default function Register() {
         <section className=" form-section">
           <label htmlFor="email">Email</label>
           <input type="text" id="email" name="email" placeholder="Email" />
-          {state?.errors?.email && <p>{state.errors.email}</p>}
+          {(state?.errors?.email && (
+            <p className="error">{state.errors.email}</p>
+          )) ||
+            (state?.message && <p className="error">{state.message}</p>)}
         </section>
         <section className="form-section">
           <label htmlFor="password">Password</label>
@@ -24,7 +27,7 @@ export default function Register() {
             placeholder="Password"
           />
           {state?.errors?.password && (
-            <div>
+            <div className="error">
               <p>Password must:</p>
               <ul>
                 {state.errors.password.map((error) => (
