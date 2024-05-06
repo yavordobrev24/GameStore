@@ -1,15 +1,21 @@
 import { Game } from "../lib/definitions";
 import GameCard from "../components/gameCard";
 import pool from "@/db/db";
-async function getGames() {
-  const res = await pool.query("SELECT * FROM games;");
-  console.log("Get games", res.rows);
+
+async function getGames(searchParams: any) {
+  const res = await pool.query("SELECT * FROM games WHERE title ILIKE $1;", [
+    "%" + searchParams?.search + "%",
+  ]);
 
   return res.rows;
 }
 
-export default async function Games() {
-  const games = await getGames();
+export default async function Games({
+  searchParams,
+}: {
+  searchParams?: { search?: string; page?: string };
+}) {
+  const games = await getGames(searchParams);
 
   return (
     <main className="flex-1">

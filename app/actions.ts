@@ -60,3 +60,8 @@ export async function logout() {
   deleteSession();
   redirect("/user/login");
 }
+
+export async function searchGame(formData: FormData) {
+  const search = formData.get("search");
+  redirect(`/games?search=${search}`);
+}
