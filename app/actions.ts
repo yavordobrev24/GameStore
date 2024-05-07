@@ -62,6 +62,6 @@ export async function logout() {
 }
 
 export async function searchGame(formData: FormData) {
-  const search = formData.get("search");
-  redirect(`/games?search=${search}`);
+  const query = formData.get("query");
+  redirect(`/search?query=${query}`);
 }

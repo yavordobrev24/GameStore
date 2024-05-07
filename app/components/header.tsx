@@ -24,8 +24,8 @@ export default async function Header() {
           <input
             type="text"
             className="searchbar"
-            id="search"
-            name="search"
+            id="query"
+            name="query"
             placeholder="What is your favorite game?"
           />
           <button>
