@@ -1,13 +1,16 @@
 import { Game } from "../lib/definitions";
 import GameCard from "../components/gameCard";
 import pool from "@/db/db";
+import Link from "next/link";
 
 async function getGames(searchParams: any) {
-  let res = null;
+  let res;
   if (searchParams?.category) {
     res = await pool.query("SELECT * FROM games WHERE $1 = ANY(categories);", [
       searchParams?.category,
     ]);
+  } else {
+    res = await pool.query("SELECT * FROM games;");
   }
   return res.rows;
 }
@@ -15,16 +18,25 @@ async function getGames(searchParams: any) {
 export default async function Games({
   searchParams,
 }: {
-  searchParams?: { search?: string; page?: string };
+  searchParams?: { category: string };
 }) {
   const games = await getGames(searchParams);
-  console.log(searchParams);
 
   return (
     <main className="flex-1">
-      <section className="flex flex-col items-center py-[2rem] main-section">
-        <h3 className="text-4xl font-bold">Games</h3>
-        <ul className="flex gap-10 mt-10 flex-wrap">
+      <section className="flex py-[2rem] mx-auto w-[1000px] mt-10 ">
+        <div className="sidebar mr-10">
+          <div className="category">
+            <p className="text-2xl">Category</p>
+            <div className="categories">
+              <Link href="/games?category=Action">Action</Link>
+              <Link href="/games?category=Sport">Sport</Link>
+              <Link href="/games?category=Adventure">Adventure</Link>
+              <Link href="/games?category=Fighting">Fighting</Link>
+            </div>
+          </div>
+        </div>
+        <ul className="flex gap-10 flex-wrap">
           {games.map((value: Game) => (
             <GameCard key={value.id} game={value} />
           ))}

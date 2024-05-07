@@ -13,14 +13,14 @@ async function searchGames(searchParams: any) {
 export default async function Search({
   searchParams,
 }: {
-  searchParams?: { search?: string; page?: string };
+  searchParams?: { query: string };
 }) {
   const games = await searchGames(searchParams);
 
   return (
     <main className="flex-1">
       <section className="flex flex-col items-center py-[2rem] main-section">
-        <h3 className="text-4xl font-bold">Search</h3>
+        <p className="search-results ">Results for {searchParams?.query}</p>
         <ul className="flex gap-10 mt-10 flex-wrap">
           {games.map((value: Game) => (
             <GameCard key={value.id} game={value} />

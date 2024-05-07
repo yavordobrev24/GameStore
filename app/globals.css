@@ -50,6 +50,13 @@
 .btn:hover {
   transform: scale(1.01);
 }
+.search-results {
+  background-color: rgb(180, 176, 174);
+  border-radius: 8px;
+  color: rgb(95, 93, 93);
+  padding: 0.5em 1em;
+  border: 2px solid;
+}
 .main-section {
   max-width: 1200px;
   margin: 0 auto;
@@ -97,7 +104,13 @@
   margin: 4rem auto 1rem auto;
 }
 .details-img {
-  width: 50vw;
+  width: 40rem;
+  height: 20rem;
+}
+.details-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 .details-content {
   margin-left: 2rem;
@@ -123,6 +136,29 @@
   border-radius: 4px;
   display: flex;
   align-items: center;
+}
+.categories {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.categories a {
+  position: relative;
+  text-align: center;
+}
+.categories a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  background-color: black;
+  width: 0%;
+  height: 1px;
+  transition: width 0.5s;
+}
+.categories a:hover::before {
+  width: 100%;
 }
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
