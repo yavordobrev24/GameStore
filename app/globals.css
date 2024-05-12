@@ -51,15 +51,14 @@
   transform: scale(1.01);
 }
 .search-results {
-  background-color: rgb(180, 176, 174);
   border-radius: 8px;
-  color: rgb(95, 93, 93);
+  color: black;
   padding: 0.5em 1em;
-  border: 2px solid;
 }
 .main-section {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 1rem auto;
+  padding: 2rem;
 }
 .icon-cards > a {
   display: flex;
@@ -178,6 +177,15 @@ input[type="number"]::-webkit-outer-spin-button {
 .error {
   color: rgb(182, 44, 44);
 }
+@media (max-width: 1500px) {
+  .slider {
+    height: 60vh;
+  }
+  .slider-item {
+    object-fit: cover;
+  }
+}
+
 @keyframes slide {
   0% {
     left: 0;
