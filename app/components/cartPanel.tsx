@@ -4,7 +4,17 @@ import Quantity from "./quantity";
 
 export default function CartPanel({ game }: any) {
   const [quantity, setQuantity] = useState(1);
-  function addToCart() {}
+  const addToCart = () => {
+    localStorage.setItem(
+      game.id,
+      JSON.stringify({
+        gamePrice: game.price,
+        gameImg: game.imageurl,
+        gameTitle: game.title,
+        quantity,
+      })
+    );
+  };
   return (
     <>
       <Quantity

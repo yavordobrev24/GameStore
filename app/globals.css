@@ -177,6 +177,23 @@ input[type="number"]::-webkit-outer-spin-button {
 .error {
   color: rgb(182, 44, 44);
 }
+.cart-card {
+  height: 10rem;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 8px;
+  display: flex;
+  gap: 1rem;
+  margin-block: 1rem;
+  padding: 1rem;
+}
+.cart-card p {
+  flex-grow: 1;
+}
+.cart-card img {
+  width: 50%;
+  object-fit: contain;
+}
 @media (max-width: 1500px) {
   .slider {
     height: 60vh;

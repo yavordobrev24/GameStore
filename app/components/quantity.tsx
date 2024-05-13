@@ -1,9 +1,5 @@
 "use client";
-import { useState } from "react";
-
 export default function Quantity({ gameId, quantity, setQuantity }: any) {
-  console.log("gameId", gameId);
-
   return (
     <div className="quantity">
       <button
