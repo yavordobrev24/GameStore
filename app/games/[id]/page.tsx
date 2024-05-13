@@ -2,6 +2,7 @@ import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import pool from "../../../db/db";
 import Quantity from "@/app/components/quantity";
 import { Game } from "@/app/lib/definitions";
+import CartPanel from "@/app/components/cartPanel";
 async function getGame(gameId: number) {
   const res = await pool.query("SELECT * FROM games WHERE id = $1", [gameId]);
   return res.rows[0];
@@ -17,11 +18,8 @@ export default async function GamePage({ params }: Params) {
       <section className="details-content">
         <h1 className="name">{game.title}</h1>
         <p className="desc">{game.description}</p>
-        <Quantity />
         <p className="price">${game.price}</p>
-        <div className="action-btns">
-          <button className="btn">Add to cart</button>
-        </div>
+        <CartPanel game={game} />
       </section>
     </main>
   );
