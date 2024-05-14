@@ -6,7 +6,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-import pool from "../db/db";
+import pool from "../postres-db/db";
 import GameCard from "./components/gameCard";
 import { Game } from "./lib/definitions";
 async function getGames() {

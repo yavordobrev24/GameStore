@@ -1,6 +1,6 @@
 import { Game } from "../lib/definitions";
 import GameCard from "../components/gameCard";
-import pool from "../../db/db";
+import pool from "../../postres-db/db";
 
 async function searchGames(searchParams: any) {
   const res = await pool.query("SELECT * FROM games WHERE title ILIKE $1;", [
