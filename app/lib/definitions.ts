@@ -30,3 +30,12 @@ export type Game = {
   imageurl: string;
   price: number;
 };
+export interface LocalStorageItem {
+  id: string;
+  value: {
+    gamePrice: number;
+    gameImg: string;
+    gameTitle: string;
+    quantity: number;
+  };
+}

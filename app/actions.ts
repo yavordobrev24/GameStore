@@ -1,6 +1,6 @@
 "use server";
 
-import pool from "@/db/db";
+import pool from "@/postres-db/db";
 import { FormState, SignupFormSchema } from "./lib/definitions";
 import { redirect } from "next/navigation";
 import { createSession, deleteSession } from "./lib/session";

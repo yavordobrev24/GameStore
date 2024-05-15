@@ -127,7 +127,7 @@
   margin-top: 2rem;
   font-size: 1.1rem;
 }
-.details-content .quantity {
+.quantity {
   margin-top: 0.5rem;
   border: 1px solid rgb(193, 193, 193);
   width: fit-content;
@@ -166,10 +166,10 @@ input[type="number"]::-webkit-outer-spin-button {
   appearance: none;
   margin: 0;
 }
-.details-content .quantity button {
+.quantity button {
   padding: 0.5rem;
 }
-.details-content .quantity input {
+.quantity input {
   width: 45px;
   outline: none;
   text-align: center;
@@ -178,21 +178,19 @@ input[type="number"]::-webkit-outer-spin-button {
   color: rgb(182, 44, 44);
 }
 .cart-card {
-  height: 10rem;
-  width: 100%;
   border: 1px solid black;
+  height: 30vh;
   border-radius: 8px;
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 1rem;
   margin-block: 1rem;
   padding: 1rem;
 }
-.cart-card p {
-  flex-grow: 1;
-}
+
 .cart-card img {
-  width: 50%;
-  object-fit: contain;
+  width: 8%;
 }
 @media (max-width: 1500px) {
   .slider {

@@ -1,17 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import Quantity from "../components/quantity";
-import Link from "next/link";
-
-interface LocalStorageItem {
-  id: string;
-  value: {
-    gamePrice: number;
-    gameImg: string;
-    gameTitle: string;
-    quantity: number;
-  };
-}
+import CartCard from "../components/cartCard";
+import { LocalStorageItem } from "../lib/definitions";
 
 export default function Cart() {
   const [localStorageData, setLocalStorageData] = useState<LocalStorageItem[]>(
@@ -33,15 +23,11 @@ export default function Cart() {
     <main className="flex-1 flex flex-col main-section">
       <h2 className="text-3xl">Shopping Cart</h2>
       {localStorageData.map((game) => (
-        <Link
-          href={`/games/${parseInt(game.id)}`}
+        <CartCard
+          game={game}
           key={game.id}
-          className="cart-card"
-        >
-          <img src={game.value.gameImg} alt={game.value.gameTitle} />
-          <p>{game.value.gameTitle}</p>
-          <p>${game.value.gamePrice}</p>
-        </Link>
+          setLocalStorageData={setLocalStorageData}
+        />
       ))}
     </main>
   );
