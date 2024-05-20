@@ -1,12 +1,22 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Quantity from "./quantity";
+import { Game } from "../lib/definitions";
 
-export default function CartPanel({ game }: any) {
-  const [quantity, setQuantity] = useState(1);
+export default function CartPanel({ game }: { game: Game }) {
+  const [quantity, setQuantity] = useState<number>(1);
+  useEffect(() => {
+    const storedGame = localStorage.getItem(String(game.id));
+    if (storedGame) {
+      const parsedGame = JSON.parse(storedGame);
+      setQuantity(Number(parsedGame.quantity));
+    } else {
+      setQuantity(1);
+    }
+  }, []);
   const addToCart = () => {
     localStorage.setItem(
-      game.id,
+      String(game.id),
       JSON.stringify({
         gamePrice: game.price,
         gameImg: game.imageurl,
