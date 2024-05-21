@@ -3,11 +3,9 @@
 import { Dispatch, SetStateAction } from "react";
 
 export default function Quantity({
-  gameId,
   quantity,
   setQuantity,
 }: {
-  gameId: number;
   quantity: number;
   setQuantity: Dispatch<SetStateAction<number>>;
 }) {

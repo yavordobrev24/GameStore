@@ -24,11 +24,7 @@ export default function CartCard({
       <img src={game.value.gameImg} alt={game.value.gameTitle} />
       <p>{game.value.gameTitle}</p>
       <p>${game.value.gamePrice}</p>
-      <Quantity
-        gameId={game.id}
-        quantity={quantity}
-        setQuantity={setQuantity}
-      />
+      <Quantity quantity={quantity} setQuantity={setQuantity} />
       <button className="remove-btn" onClick={removeFromCart}>
         X
       </button>

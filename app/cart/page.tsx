@@ -8,8 +8,18 @@ export default function Cart() {
     []
   );
 
+  function checkoutCart() {
+    localStorage.clear();
+    setLocalStorageData([]);
+    alert("Thank you for shopping with us!");
+  }
+
   useEffect(() => {
+    console.log(localStorageData);
+
     const keys = Object.keys(localStorage);
+    console.log(keys);
+
     const parsedData = keys.reduce((acc: LocalStorageItem[], id) => {
       if (!isNaN(parseInt(id))) {
         acc.push({ id, value: JSON.parse(localStorage.getItem(id) || "") });
@@ -29,6 +39,11 @@ export default function Cart() {
           setLocalStorageData={setLocalStorageData}
         />
       ))}
+      {localStorageData.length > 0 && (
+        <button className="btn mt-10" onClick={checkoutCart}>
+          Checkout
+        </button>
+      )}
     </main>
   );
 }
