@@ -29,7 +29,9 @@ export default function CartCard({
         quantity={quantity}
         setQuantity={setQuantity}
       />
-      <button onClick={removeFromCart}>X</button>
+      <button className="remove-btn" onClick={removeFromCart}>
+        X
+      </button>
     </div>
   );
 }

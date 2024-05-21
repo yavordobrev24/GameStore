@@ -3,7 +3,11 @@ import GameCard from "../components/gameCard";
 import pool from "@/postres-db/db";
 import Link from "next/link";
 
-async function getGames(searchParams: any) {
+async function getGames({
+  searchParams,
+}: {
+  searchParams: { category: string };
+}) {
   let res;
   if (searchParams?.category) {
     res = await pool.query("SELECT * FROM games WHERE $1 = ANY(categories);", [
@@ -18,9 +22,9 @@ async function getGames(searchParams: any) {
 export default async function Games({
   searchParams,
 }: {
-  searchParams?: { category: string };
+  searchParams: { category: string };
 }) {
-  const games = await getGames(searchParams);
+  const games = await getGames({ searchParams });
 
   return (
     <main className="flex-1">

@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { Game } from "../lib/definitions";
 
-export default function GameCard({ game }: any) {
+export default function GameCard({ game }: { game: Game }) {
   return (
     <li className="card">
       <Link href={`/games/${game.id}`}>

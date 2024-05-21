@@ -2,7 +2,11 @@ import { Game } from "../lib/definitions";
 import GameCard from "../components/gameCard";
 import pool from "../../postres-db/db";
 
-async function searchGames(searchParams: any) {
+async function searchGames({
+  searchParams,
+}: {
+  searchParams: { query: string };
+}) {
   const res = await pool.query("SELECT * FROM games WHERE title ILIKE $1;", [
     "%" + searchParams?.query + "%",
   ]);
@@ -13,9 +17,9 @@ async function searchGames(searchParams: any) {
 export default async function Search({
   searchParams,
 }: {
-  searchParams?: { query: string };
+  searchParams: { query: string };
 }) {
-  const games = await searchGames(searchParams);
+  const games = await searchGames({ searchParams });
 
   return (
     <main className="flex-1">

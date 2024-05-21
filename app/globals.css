@@ -187,10 +187,19 @@ input[type="number"]::-webkit-outer-spin-button {
   gap: 1rem;
   margin-block: 1rem;
   padding: 1rem;
+  position: relative;
 }
 
 .cart-card img {
   width: 8%;
+}
+.remove-btn {
+  position: absolute;
+  right: 2rem;
+  background-color: black;
+  color: white;
+  border-radius: 8px;
+  padding: 1rem 2rem;
 }
 @media (max-width: 1500px) {
   .slider {

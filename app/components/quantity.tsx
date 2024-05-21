@@ -1,5 +1,16 @@
 "use client";
-export default function Quantity({ gameId, quantity, setQuantity }: any) {
+
+import { Dispatch, SetStateAction } from "react";
+
+export default function Quantity({
+  gameId,
+  quantity,
+  setQuantity,
+}: {
+  gameId: number;
+  quantity: number;
+  setQuantity: Dispatch<SetStateAction<number>>;
+}) {
   return (
     <div className="quantity">
       <button
