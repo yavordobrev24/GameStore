@@ -51,13 +51,12 @@ export default async function Header() {
                   />
                 </button>
               </form>
+              <Link href="/cart">
+                <FontAwesomeIcon icon={faCartShopping} className="text-2xl" />
+              </Link>
             </>
           )}
-          <li>
-            <Link href="/cart">
-              <FontAwesomeIcon icon={faCartShopping} className="text-2xl" />
-            </Link>
-          </li>
+          <li></li>
         </ul>
       </nav>
     </header>

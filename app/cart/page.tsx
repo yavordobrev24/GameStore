@@ -32,17 +32,23 @@ export default function Cart() {
   return (
     <main className="flex-1 flex flex-col main-section">
       <h2 className="text-3xl">Shopping Cart</h2>
-      {localStorageData.map((game) => (
-        <CartCard
-          game={game}
-          key={game.id}
-          setLocalStorageData={setLocalStorageData}
-        />
-      ))}
-      {localStorageData.length > 0 && (
-        <button className="btn mt-10" onClick={checkoutCart}>
-          Checkout
-        </button>
+      {localStorageData.length > 0 ? (
+        <>
+          {localStorageData.map((game) => (
+            <CartCard
+              game={game}
+              key={game.id}
+              setLocalStorageData={setLocalStorageData}
+            />
+          ))}
+          <button className="btn mt-10" onClick={checkoutCart}>
+            Checkout
+          </button>
+        </>
+      ) : (
+        <p className="text-center text-gray-500 mt-4">
+          Your cart is currently empty.
+        </p>
       )}
     </main>
   );

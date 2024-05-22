@@ -54,7 +54,7 @@ export default async function Games({
 
   return (
     <main className="flex-1">
-      <section className="flex main-section pt-10">
+      <section className="flex max-w-[1000px] py-12 mx-auto">
         <div className="sidebar mr-10">
           <div className="category">
             <p className="text-2xl font-bold">Category</p>
