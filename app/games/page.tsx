@@ -2,6 +2,7 @@ import { Game } from "../lib/definitions";
 import GameCard from "../components/gameCard";
 import pool from "@/postres-db/db";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 async function getGames({
   searchParams,
@@ -9,21 +10,46 @@ async function getGames({
   searchParams: { category: string };
 }) {
   let res;
+
   if (searchParams?.category) {
-    res = await pool.query("SELECT * FROM games WHERE $1 = ANY(categories);", [
-      searchParams?.category,
-    ]);
+    if (searchParams?.category == "All")
+      res = await pool.query("SELECT * FROM games;");
+    else {
+      res = await pool.query(
+        "SELECT * FROM games WHERE $1 = ANY(categories);",
+        [searchParams?.category]
+      );
+    }
   } else {
     res = await pool.query("SELECT * FROM games;");
   }
   return res.rows;
 }
-
+const categories = [
+  {
+    name: "All",
+  },
+  {
+    name: "Action",
+  },
+  {
+    name: "Sport",
+  },
+  {
+    name: "Adventure",
+  },
+  {
+    name: "Fighting",
+  },
+];
 export default async function Games({
   searchParams,
 }: {
   searchParams: { category: string };
 }) {
+  if (!searchParams.category) {
+    redirect("http://localhost:3000/games?category=All");
+  }
   const games = await getGames({ searchParams });
 
   return (
@@ -31,12 +57,23 @@ export default async function Games({
       <section className="flex main-section pt-10">
         <div className="sidebar mr-10">
           <div className="category">
-            <p className="text-2xl">Category</p>
+            <p className="text-2xl font-bold">Category</p>
             <div className="categories">
-              <Link href="/games?category=Action">Action</Link>
-              <Link href="/games?category=Sport">Sport</Link>
-              <Link href="/games?category=Adventure">Adventure</Link>
-              <Link href="/games?category=Fighting">Fighting</Link>
+              <ul>
+                {searchParams.category &&
+                  categories.map((x: any) => (
+                    <li key={x.name}>
+                      <Link
+                        href={`/games?category=${x.name}`}
+                        className={`${
+                          searchParams.category == x.name ? "font-bold" : ""
+                        }`}
+                      >
+                        {x.name}
+                      </Link>
+                    </li>
+                  ))}
+              </ul>
             </div>
           </div>
         </div>
