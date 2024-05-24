@@ -34,7 +34,7 @@ Web application for managing gaming purchases, powered by Next.js, React, Tailwi
    npm install
    ```
    
-3. **Create a `.env` file in the main directory and add your preferred session secret and PostgreSQL database configuration:**
+3. **Create a `.env` file in the `gamestore` folder and add your preferred session secret and PostgreSQL database configuration:**
 
    ```bash
    SESSION_SECRET=secret_for_json_web_tokens
