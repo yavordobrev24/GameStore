@@ -1,6 +1,6 @@
 # GameStore
 
-Web application for managing gaming purchases, powered by Next.js, React, Tailwind CSS, and PostgreSQL for robust data management.
+Web application for managing gaming purchases, powered by Next.js, Tailwind CSS and PostgreSQL for robust data management.
 
 ## Usage
 
