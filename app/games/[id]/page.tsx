@@ -1,5 +1,5 @@
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
-import pool from "../../../postres-db/db";
+import pool from "../../../postgres-db/db";
 import Quantity from "@/app/components/quantity";
 import { Game } from "@/app/lib/definitions";
 import CartPanel from "@/app/components/cartPanel";

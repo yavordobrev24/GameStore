@@ -1,6 +1,6 @@
 import { Game } from "../lib/definitions";
 import GameCard from "../components/gameCard";
-import pool from "@/postres-db/db";
+import pool from "@/postgres-db/db";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
