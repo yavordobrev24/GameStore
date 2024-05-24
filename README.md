@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# GameStore
 
-## Getting Started
+Web application for managing gaming purchases, powered by Next.js, React, Tailwind CSS, and PostgreSQL for robust data management.
 
-First, run the development server:
+## Usage
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Register for an account to access personalized features.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Log in using your credentials.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Browse games by categories, view details, and add preferred items to your cart.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. Proceed to the cart for checkout to finalize your purchase.
 
-## Learn More
+## How to run
 
-To learn more about Next.js, take a look at the following resources:
+### Prerequisites
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Ensure [Node.js](https://nodejs.org/) is installed on your system.
+- Ensure PostgreSQL is installed on your system.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Installation and Starting
 
-## Deploy on Vercel
+1. Clone the repository:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   git clone https://github.com/your-username/gamestore.git
+   ```
+   
+2. Navigate to the project directory and install dependencies:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   ```bash
+   cd gamestore/app
+   npm install
+   ```
+   
+3. **Create a `.env` file in the main directory and add your preferred session secret and PostgreSQL database configuration:**
+
+   ```bash
+   SESSION_SECRET=secret_for_json_web_tokens
+   PG_USER=your_username
+   PG_PASSWORD=your_password
+   PG_HOST=localhost
+   PG_PORT=5432
+   PG_DATABASE=gamestore
+   ```
+   
+4. **Open the database in the terminal and run the command:**
+
+   ```bash
+   psql -U your_postgres_username
+   your_postgres_password
+   ```
+   
+5. **After that run the first sql command in the create.sql (postgres-db folder) to create a database**
+ 
+   ```bash
+   CREATE DATABASE gamestore;
+   ```
+   When you create it you also have to connect to it using \c gamestore
+   
+6. **After creating the database and connecting to it execute the commands in the create.sql and insert.sql files to create the tables and insert values**
+   
+7. **Start the app:**
+
+   ```bash
+   npm run dev
+   ```
+
+8. **Open `http://localhost:3000` in your web browser to use the app.**
