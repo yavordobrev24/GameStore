@@ -52,7 +52,7 @@ Web application for managing gaming purchases, powered by Next.js, Tailwind CSS 
    your_postgres_password
    ```
    
-5. **After that run the first sql command in the create.sql (postgres-db folder) to create a database**
+5. **After that run the first sql command in the create.sql in the `postgres-db` folder to create a database**
  
    ```bash
    CREATE DATABASE gamestore;
