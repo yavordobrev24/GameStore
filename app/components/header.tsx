@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { getSession } from "../lib/session";
 import { logout, searchGame } from "../actions";
+import LogoutButton from "./logoutButton";
 
 export default async function Header() {
   const session = await getSession();
@@ -28,8 +29,11 @@ export default async function Header() {
             name="query"
             placeholder="What is your favorite game?"
           />
-          <button>
-            <FontAwesomeIcon icon={faMagnifyingGlass} className="mx-2" />
+          <button className="search">
+            <FontAwesomeIcon
+              icon={faMagnifyingGlass}
+              className="mx-2 hover:text-purple-600"
+            />
           </button>
         </form>
 
@@ -37,22 +41,22 @@ export default async function Header() {
           {!session && (
             <li>
               <Link href="/user/login">
-                <FontAwesomeIcon icon={faUser} className="text-2xl" />
+                <FontAwesomeIcon
+                  icon={faUser}
+                  className="text-2xl hover:text-purple-600"
+                />
               </Link>
             </li>
           )}
           {session && (
             <>
-              <form action={logout}>
-                <button type="submit">
-                  <FontAwesomeIcon
-                    icon={faArrowRightFromBracket}
-                    className="text-2xl cursor-pointer"
-                  />
-                </button>
-              </form>
+              <LogoutButton />
+
               <Link href="/cart">
-                <FontAwesomeIcon icon={faCartShopping} className="text-2xl" />
+                <FontAwesomeIcon
+                  icon={faCartShopping}
+                  className="text-2xl hover:text-purple-600"
+                />
               </Link>
             </>
           )}
