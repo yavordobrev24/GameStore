@@ -1,10 +1,13 @@
 "use client";
 import { useEffect, useState } from "react";
 import Quantity from "./quantity";
-import { Game } from "../lib/definitions";
+import { CartItem, Game } from "../lib/definitions";
+import { useStore } from "../store";
 
 export default function CartPanel({ game }: { game: Game }) {
   const [quantity, setQuantity] = useState<number>(1);
+  const storedGames = useStore((store) => store.cart);
+  const storedGame = storedGames.find((g: CartItem) => g.id == game.id);
   useEffect(() => {
     const storedGame = localStorage.getItem(String(game.id));
     if (storedGame) {
@@ -27,11 +30,7 @@ export default function CartPanel({ game }: { game: Game }) {
   };
   return (
     <>
-      <Quantity
-        gameId={game.id}
-        quantity={quantity}
-        setQuantity={setQuantity}
-      />
+      <Quantity quantity={quantity} setQuantity={setQuantity} />
       <div className="action-btns">
         <button className="btn" onClick={addToCart}>
           Add to cart

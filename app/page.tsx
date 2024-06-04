@@ -11,11 +11,14 @@ import GameCard from "./components/gameCard";
 import { Game } from "./lib/definitions";
 async function getGames() {
   const res = await pool.query("SELECT * FROM games;");
+  console.log(res.rows);
+
   return res.rows;
 }
 
 export default async function Home() {
   const games = await getGames();
+  console.log(games);
 
   return (
     <main className="overflow-hidden flex-1">
