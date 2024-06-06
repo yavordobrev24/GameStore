@@ -4,10 +4,12 @@ import Quantity from "@/app/components/quantity";
 import { Game } from "@/app/lib/definitions";
 import Panel from "@/app/components/panel";
 import { getSession } from "@/app/lib/session";
+
 async function getGame(gameId: number) {
   const res = await pool.query("SELECT * FROM games WHERE id = $1", [gameId]);
   return res.rows[0];
 }
+
 export default async function GamePage({ params }: Params) {
   const game: Game = await getGame(params.id);
   const session = await getSession();

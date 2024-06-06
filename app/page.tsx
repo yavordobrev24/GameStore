@@ -4,11 +4,11 @@ import {
   faHandFist,
   faMap,
 } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import pool from "../postgres-db/db";
 import GameCard from "./components/gameCard";
 import { Game } from "./lib/definitions";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 async function getGames() {
   const res = await pool.query("SELECT * FROM games;");
   console.log(res.rows);

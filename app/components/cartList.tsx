@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from "react";
 import { CartItem } from "../lib/definitions";
 import { useStore } from "../store";
 import CartCard from "./cartCard";
@@ -10,8 +11,8 @@ export default function CartList() {
     <>
       {storedGames.length > 0 ? (
         <>
-          {storedGames.map((cartItem: CartItem) => (
-            <CartCard cartItem={cartItem} />
+          {storedGames.map((game: CartItem) => (
+            <CartCard cartItem={game} key={game.id} />
           ))}
           <CheckoutButton />
         </>
