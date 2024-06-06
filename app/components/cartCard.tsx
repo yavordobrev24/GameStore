@@ -1,34 +1,15 @@
-"use client";
-import { LocalStorageItem } from "../lib/definitions";
-import Quantity from "./quantity";
-import { useState } from "react";
+import { CartItem } from "../lib/definitions";
 
-export default function CartCard({
-  game,
-  setLocalStorageData,
-}: {
-  game: LocalStorageItem;
-  setLocalStorageData: any;
-}) {
-  const [quantity, setQuantity] = useState(game.value.quantity);
-
-  const removeFromCart = () => {
-    localStorage.removeItem(game.id);
-    setLocalStorageData((previous: LocalStorageItem[]) =>
-      previous.filter((x: LocalStorageItem) => x.id !== game.id)
-    );
-  };
+export default async function CartCard({ cartItem }: { cartItem: CartItem }) {
+  console.log(cartItem);
 
   return (
     <div className="cart-card">
-      <img src={game.value.gameImg} alt={game.value.gameTitle} />
-      <p className="game-title">{game.value.gameTitle}</p>
-      <p className="game-price">${game.value.gamePrice}</p>
-      <p className="game-quantity">{game.value.quantity} copies</p>
-
-      <button className="remove-btn" onClick={removeFromCart}>
-        X
-      </button>
+      <img src={cartItem.imageurl} alt={cartItem.title} />
+      <p className="game-title">{cartItem.title}</p>
+      <p className="game-price">${cartItem.price}</p>
+      <p className="game-quantity">{cartItem.quantity} copies</p>
+      {/* <RemoveButton cartItem={cartItem} /> */}
     </div>
   );
 }
