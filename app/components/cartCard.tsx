@@ -1,6 +1,6 @@
 import { CartItem } from "../lib/definitions";
 
-export default async function CartCard({ cartItem }: { cartItem: CartItem }) {
+export default function CartCard({ cartItem }: { cartItem: CartItem }) {
   console.log(cartItem);
 
   return (
