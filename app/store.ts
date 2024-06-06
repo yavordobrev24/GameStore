@@ -15,23 +15,28 @@ export const useStore = create<Store>()(
     (set) => ({
       cart: [],
       addCartItem: (cartItem: CartItem) => {
-        set((state) => ({ cart: [...state.cart, cartItem] }));
+        set((state) => ({
+          cart: [
+            ...state.cart.filter((item: CartItem) => item.id != cartItem.id),
+            cartItem,
+          ],
+        }));
       },
       updateCartItem: (cartItem: CartItem) => {
         set((state) => ({
           cart: [
-            ...state.cart.map((ci: CartItem) => {
-              if (ci.id === cartItem.id) {
+            ...state.cart.map((item: CartItem) => {
+              if (item.id === cartItem.id) {
                 return { ...cartItem };
               }
-              return ci;
+              return item;
             }),
           ],
         }));
       },
       removeCartItem: (cartItem: CartItem) => {
         set((state) => ({
-          cart: state.cart.filter((ci) => ci.id == cartItem.id),
+          cart: [...state.cart.filter((item) => item.id != cartItem.id)],
         }));
       },
       clearCart: () => {
