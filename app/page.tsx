@@ -5,21 +5,9 @@ import {
   faMap,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-import pool from "../postgres-db/db";
-import GameCard from "./components/gameCard";
-import { Game } from "./lib/definitions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-async function getGames() {
-  const res = await pool.query("SELECT * FROM games;");
-  console.log(res.rows);
-
-  return res.rows;
-}
 
 export default async function Home() {
-  const games = await getGames();
-  console.log(games);
-
   return (
     <main className="overflow-hidden flex-1">
       <section className="slider shadow-md">
@@ -43,14 +31,6 @@ export default async function Home() {
           src="https://image.api.playstation.com/vulcan/ap/rnd/202311/2015/45ab1e741439ba2e06782cfc09cd4e57467d436c5b84bc79.jpg"
           alt=""
         />
-      </section>
-      <section className="flex flex-col items-center py-[2rem] main-section">
-        <h3 className="text-4xl font-bold">New</h3>
-        <ul className="flex gap-10 mt-10 flex-wrap">
-          {games.slice(-4).map((value: Game) => (
-            <GameCard key={value.id} game={value} />
-          ))}
-        </ul>
       </section>
       <section className="flex flex-col main-section py-[2rem] items-center">
         <h3 className="text-4xl font-bold">Categories</h3>
