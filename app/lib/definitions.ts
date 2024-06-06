@@ -31,6 +31,9 @@ export type Game = {
   price: number;
 };
 export type CartItem = {
-  id: Number;
-  quantity: Number;
+  id: number;
+  title: string;
+  imageurl: string;
+  price: number;
+  quantity: number;
 };

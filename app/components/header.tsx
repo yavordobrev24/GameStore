@@ -7,7 +7,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { getSession } from "../lib/session";
-import { logout, searchGame } from "../actions";
+import { searchGame } from "../actions";
 import LogoutButton from "./logoutButton";
 
 export default async function Header() {

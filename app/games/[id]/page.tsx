@@ -2,7 +2,7 @@ import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import pool from "../../../postgres-db/db";
 import Quantity from "@/app/components/quantity";
 import { Game } from "@/app/lib/definitions";
-import CartPanel from "@/app/components/cartPanel";
+import Panel from "@/app/components/panel";
 import { getSession } from "@/app/lib/session";
 async function getGame(gameId: number) {
   const res = await pool.query("SELECT * FROM games WHERE id = $1", [gameId]);
@@ -22,7 +22,7 @@ export default async function GamePage({ params }: Params) {
         <p className="desc">{game.description}</p>
         <p className="price">${game.price}</p>
         {session ? (
-          <CartPanel game={game} />
+          <Panel game={game} />
         ) : (
           <p className="text-gray-500 mt-4 font-semibold">
             Please log in to continue shopping!
