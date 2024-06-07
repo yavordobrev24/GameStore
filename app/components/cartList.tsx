@@ -14,7 +14,6 @@ export default function CartList() {
           {storedGames.map((game: CartItem) => (
             <CartCard cartItem={game} key={game.id} />
           ))}
-          <CheckoutButton />
         </>
       ) : (
         <p className="text-center text-gray-500 mt-4">
