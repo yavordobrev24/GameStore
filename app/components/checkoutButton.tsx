@@ -1,10 +1,16 @@
+"use client";
 import { useStore } from "../store";
 
 export default function CheckoutButton() {
   const clearCart = useStore((store) => store.clearCart);
+  const storedGames = useStore((store) => store.cart);
   return (
-    <button className="btn mt-10" onClick={clearCart}>
-      Checkout
-    </button>
+    <>
+      {storedGames.length > 0 && (
+        <button className="btn mt-10 center" onClick={clearCart}>
+          Checkout
+        </button>
+      )}
+    </>
   );
 }
