@@ -38,6 +38,12 @@ export default async function Header() {
         </form>
 
         <ul className="flex gap-3 text-lg">
+          <Link href="/cart">
+            <FontAwesomeIcon
+              icon={faCartShopping}
+              className="text-2xl hover:text-purple-600"
+            />
+          </Link>
           {!session && (
             <li>
               <Link href="/user/login">
@@ -48,19 +54,7 @@ export default async function Header() {
               </Link>
             </li>
           )}
-          {session && (
-            <>
-              <LogoutButton />
-
-              <Link href="/cart">
-                <FontAwesomeIcon
-                  icon={faCartShopping}
-                  className="text-2xl hover:text-purple-600"
-                />
-              </Link>
-            </>
-          )}
-          <li></li>
+          {session && <LogoutButton />}
         </ul>
       </nav>
     </header>
