@@ -1,5 +1,7 @@
 import { CartItem } from "../lib/definitions";
+
 import RemoveButton from "./removeButton";
+import CartQuantity from "./cartQuantity";
 
 export default function CartCard({ cartItem }: { cartItem: CartItem }) {
   return (
@@ -7,7 +9,7 @@ export default function CartCard({ cartItem }: { cartItem: CartItem }) {
       <img src={cartItem.imageurl} alt={cartItem.title} />
       <p className="game-title">{cartItem.title}</p>
       <p className="game-price">${cartItem.price}</p>
-      <p className="game-quantity">{cartItem.quantity} copies</p>
+      <CartQuantity cartItemId={cartItem.id} />
       <RemoveButton cartItem={cartItem} />
     </div>
   );
