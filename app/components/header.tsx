@@ -9,6 +9,7 @@ import Link from "next/link";
 import { getSession } from "../lib/session";
 import { searchGame } from "../actions";
 import LogoutButton from "./logoutButton";
+import CartLink from "./cartLink";
 
 export default async function Header() {
   const session = await getSession();
@@ -38,12 +39,7 @@ export default async function Header() {
         </form>
 
         <ul className="flex gap-3 text-lg">
-          <Link href="/cart">
-            <FontAwesomeIcon
-              icon={faCartShopping}
-              className="text-2xl hover:text-purple-600"
-            />
-          </Link>
+          <CartLink />
           {!session && (
             <li>
               <Link href="/user/login">
