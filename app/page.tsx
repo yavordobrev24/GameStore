@@ -6,6 +6,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Newest from "./components/newest";
 
 export default async function Home() {
   return (
@@ -53,6 +54,7 @@ export default async function Home() {
           </Link>
         </div>
       </section>
+      <Newest />
     </main>
   );
 }
