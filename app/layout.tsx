@@ -5,7 +5,6 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import { config } from "@fortawesome/fontawesome-svg-core";
-import Newest from "./components/newest";
 
 config.autoAddCss = false;
 
@@ -23,7 +22,7 @@ export default function RootLayout({
       <body className="flex flex-col min-h-screen mt-[6rem]">
         <Header />
         {children}
-        <Newest />
+
         <Footer />
       </body>
     </html>
