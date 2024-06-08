@@ -38,7 +38,7 @@ export default async function Header() {
           </button>
         </form>
 
-        <ul className="flex gap-3 text-lg">
+        <ul className="flex gap-6 items-center">
           <CartLink />
           {!session && (
             <li>

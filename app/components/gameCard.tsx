@@ -9,7 +9,7 @@ export default function GameCard({ game }: { game: Game }) {
           <img src={game.imageurl} alt={game.title} />
         </div>
         <div className="text-center">
-          <p>{game.title}</p>
+          <p className="text-lg">{game.title}</p>
           <p className="font-bold">${game.price}</p>
         </div>
       </Link>
