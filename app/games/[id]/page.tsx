@@ -9,7 +9,7 @@ async function getGame(gameId: number) {
   return res.rows[0];
 }
 
-export default async function GamePage({ params }: Params) {
+export default async function GamePage({ params }: { params: Params }) {
   const game: Game = await getGame(params.id);
 
   return (
