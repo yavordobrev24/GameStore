@@ -33,6 +33,7 @@ export default async function Home() {
           alt=""
         />
       </section>
+      <Newest />
       <section className="flex flex-col main-section py-[2rem] items-center">
         <h3 className="text-4xl">Categories</h3>
         <div className="icon-cards flex flex-wrap gap-10 mt-11">
@@ -54,7 +55,6 @@ export default async function Home() {
           </Link>
         </div>
       </section>
-      <Newest />
     </main>
   );
 }
