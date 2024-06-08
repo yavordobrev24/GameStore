@@ -37,6 +37,20 @@ export default function Register() {
             </div>
           )}
         </section>
+        <section className="form-section">
+          <label htmlFor="confirm-password">Confirm password</label>
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirm-password"
+            placeholder="Confirm password"
+          />
+          {state?.error && (
+            <div className="error">
+              <p>{state.error}</p>
+            </div>
+          )}
+        </section>
         <button className="btn">Register</button>
       </form>
       <Link href="/user/login" className="w-fit">
