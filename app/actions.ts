@@ -4,6 +4,7 @@ import pool from "@/postgres-db/db";
 import { FormState, SignupFormSchema } from "./lib/definitions";
 import { redirect } from "next/navigation";
 import { createSession, deleteSession } from "./lib/session";
+import { error } from "console";
 
 export const login = async (state: FormState, formData: FormData) => {
   const email = formData.get("email");
@@ -29,11 +30,14 @@ export const login = async (state: FormState, formData: FormData) => {
 export const register = async (state: FormState, formData: FormData) => {
   const email = formData.get("email");
   const password = formData.get("password");
+  const confirmPassword = formData.get("confirm-password");
   const validatedFields = SignupFormSchema.safeParse({
     email,
     password,
   });
-
+  if (password != confirmPassword) {
+    return { error: "Passwords must match" };
+  }
   if (!validatedFields.success) {
     return {
       errors: validatedFields.error.flatten().fieldErrors,
