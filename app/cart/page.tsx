@@ -13,7 +13,9 @@ export default async function Cart() {
         {session ? (
           <CheckoutButton />
         ) : (
-          <p className="text-center text-lg">Login to checkout</p>
+          <p className="text-center text-lg font-bold italic">
+            Login to purchase
+          </p>
         )}
       </section>
       <Newest />
