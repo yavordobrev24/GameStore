@@ -4,7 +4,6 @@ import pool from "@/postgres-db/db";
 import { FormState, SignupFormSchema } from "./lib/definitions";
 import { redirect } from "next/navigation";
 import { createSession, deleteSession } from "./lib/session";
-import { error } from "console";
 
 export const login = async (state: FormState, formData: FormData) => {
   const email = formData.get("email");
