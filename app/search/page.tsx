@@ -25,7 +25,7 @@ export default async function Search({
     <main className="flex-1">
       <section className="flex flex-col py-[2rem] main-section items-center">
         <p className="search-results ">Results for search: {games.length}</p>
-        <ul className="grid grid-cols-4 gap-8 mt-5">
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-5 ">
           {games.map((game: Game) => (
             <GameCard key={game.id} game={game} />
           ))}
