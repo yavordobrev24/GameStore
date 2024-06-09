@@ -9,9 +9,14 @@ export default function Login() {
     <main className="flex-1 flex flex-col mx-auto justify-center gap-2 item">
       <h2 className="text-3xl text-center">Login</h2>
       <form className="flex flex-col gap-3" action={action}>
-        <section className=" form-section">
+        <section className="form-section">
           <label htmlFor="email">Email</label>
-          <input type="text" id="email" name="email" placeholder="Email" />
+          <input
+            type="text"
+            id="email"
+            name="email"
+            placeholder="Demo: yavor@gmail.com"
+          />
         </section>
         <section className="form-section">
           <label htmlFor="password">Password</label>
@@ -19,7 +24,7 @@ export default function Login() {
             type="password"
             id="password"
             name="password"
-            placeholder="Password"
+            placeholder="Demo: 123456"
           />
         </section>
         {state?.message && <p className="error">{state.message}</p>}
