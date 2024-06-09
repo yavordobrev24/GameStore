@@ -16,13 +16,13 @@ export default async function Header() {
 
   return (
     <header className="fixed top-0 z-10 bg-secondary w-full px-[10rem] py-[2rem] border-b-[1px] border-gray-300">
-      <nav className="flex justify-between">
-        <p className="font-bold text-2xl ">
+      <nav className="flex justify-between desktop">
+        <p className="font-bold text-2xl">
           <Link href="/">
             Game<span className="text-purple-600">Store</span>
           </Link>
         </p>
-        <form action={searchGame}>
+        <form action={searchGame} className="min-w-[400px]  flex gap-[0.5rem]">
           <input
             type="text"
             className="searchbar"
@@ -52,6 +52,45 @@ export default async function Header() {
           )}
           {session && <LogoutButton />}
         </ul>
+      </nav>
+      <nav className="mobile">
+        <div className="flex justify-between mb-3">
+          <p className="font-bold text-2xl">
+            <Link href="/">
+              Game<span className="text-purple-600">Store</span>
+            </Link>
+          </p>
+          <ul className="flex gap-6 items-center">
+            <CartLink />
+            {!session && (
+              <li>
+                <Link href="/user/login">
+                  <FontAwesomeIcon
+                    icon={faUser}
+                    className="text-2xl hover:text-purple-600"
+                  />
+                </Link>
+              </li>
+            )}
+            {session && <LogoutButton />}
+          </ul>
+        </div>
+
+        <form action={searchGame} className="flex min-w-[200px]">
+          <input
+            type="text"
+            className="searchbar"
+            id="query"
+            name="query"
+            placeholder="What is your favorite game?"
+          />
+          <button className="search">
+            <FontAwesomeIcon
+              icon={faMagnifyingGlass}
+              className="mx-2 hover:text-purple-600"
+            />
+          </button>
+        </form>
       </nav>
     </header>
   );
