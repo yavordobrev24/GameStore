@@ -8,19 +8,32 @@ export default async function Footer() {
           <h2 className="text-lg font-bold text-center">Sitemap</h2>
           <ul className="flex gap-3">
             <li>
-              <Link href="/games?category=All">Games</Link>
+              <Link href="/games?category=All" className="hover:underline">
+                Games
+              </Link>
             </li>
             <li>
-              <Link href="/games?category=Action">Action</Link>
+              <Link href="/games?category=Action" className="hover:underline">
+                Action
+              </Link>
             </li>
             <li>
-              <Link href="/games?category=Sport">Sport</Link>
+              <Link href="/games?category=Sport" className="hover:underline">
+                Sport
+              </Link>
             </li>
             <li>
-              <Link href="/games?category=Adventure">Adventure</Link>
+              <Link
+                href="/games?category=Adventure"
+                className="hover:underline"
+              >
+                Adventure
+              </Link>
             </li>
             <li>
-              <Link href="/games?category=Fighting">Fighting</Link>
+              <Link href="/games?category=Fighting" className="hover:underline">
+                Fighting
+              </Link>
             </li>
           </ul>
         </div>

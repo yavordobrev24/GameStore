@@ -1,9 +1,7 @@
 "use client";
-import { useEffect } from "react";
 import { CartItem } from "../lib/definitions";
 import { useStore } from "../store";
 import CartCard from "./cartCard";
-import CheckoutButton from "./checkoutButton";
 
 export default function CartList() {
   const storedGames = useStore((store) => store.cart);
