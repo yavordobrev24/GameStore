@@ -1,6 +1,6 @@
 # GameStore
 
-A web application for managing gaming purchases, built with Next.js and Tailwind CSS, hosted on Vercel, with PostgreSQL deployed on Neon for robust data management.
+A web application for managing gaming purchases, developed using Next.js and Tailwind CSS, and hosted on Vercel. It features robust data management with PostgreSQL deployed on Neon and utilizes Zustand for state management.
 
 ## Usage
 
