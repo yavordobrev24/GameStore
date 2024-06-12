@@ -14,7 +14,7 @@ export default function CartList() {
           ))}
         </>
       ) : (
-        <p className="text-center text-gray-500 mt-4">
+        <p className="text-center text-gray-500 my-5">
           Your cart is currently empty.
         </p>
       )}

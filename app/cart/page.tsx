@@ -1,3 +1,4 @@
+import Link from "next/link";
 import CartList from "../components/cartList";
 import CheckoutButton from "../components/checkoutButton";
 import Newest from "../components/newest";
@@ -6,16 +7,16 @@ import { getSession } from "../lib/session";
 export default async function Cart() {
   const session = await getSession();
   return (
-    <main className="flex-1 flex flex-col main-section">
+    <main className="flex-1 flex flex-col main-section text-center">
       <section>
-        <h2 className="text-3xl">Shopping Cart</h2>
+        <h2 className="text-3xl mb-10">Shopping Cart</h2>
         <CartList />
         {session ? (
           <CheckoutButton />
         ) : (
-          <p className="text-center text-lg font-bold italic">
+          <Link href="/user/login" className="text-lg italic underline">
             Login to purchase
-          </p>
+          </Link>
         )}
       </section>
       <Newest />
