@@ -37,7 +37,7 @@ export default async function Home() {
       <Newest />
       <section className="flex flex-col main-section py-[2rem] items-center">
         <h3 className="text-4xl">Categories</h3>
-        <div className="icon-cards flex flex-wrap gap-10 mt-11">
+        <div className={`${styles["icon-cards"]}`}>
           <Link href="/games?category=Action">
             <FontAwesomeIcon icon={faGun} />
             Action

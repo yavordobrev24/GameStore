@@ -52,34 +52,7 @@
   margin: 3rem auto;
   padding: 2rem;
 }
-.icon-cards > a {
-  display: flex;
-  flex-direction: column;
-  background-color: black;
-  color: white;
-  padding: 1rem 3rem;
-  border-radius: 8px;
-  gap: 1rem;
-  transition: transform 100ms;
-}
-.icon-cards > :nth-of-type(1) {
-  background-color: red;
-}
-.icon-cards > :nth-of-type(2) {
-  background-color: blue;
-}
-.icon-cards > :nth-of-type(3) {
-  background-color: green;
-}
-.icon-cards > :nth-of-type(4) {
-  background-color: purple;
-}
-.icon-cards > a:hover {
-  transform: scale(1.05);
-}
-.icon-cards > a > svg {
-  font-size: 2.4rem;
-}
+
 .searchbar {
   width: 100%;
   border: 1px solid rgb(73, 70, 70);

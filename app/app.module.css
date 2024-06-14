@@ -13,6 +13,29 @@
   float: left;
   object-position: center;
 }
+.icon-cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  gap: 2rem;
+}
+.icon-cards a {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  color: black;
+  padding: 1rem 3rem;
+  border-radius: 5px;
+  gap: 1rem;
+  transition: 300ms;
+}
+.icon-cards a:hover {
+  background: #000;
+  color: white;
+}
+.icon-cards a svg {
+  font-size: 2rem;
+}
 @keyframes slide {
   0% {
     left: 0;
