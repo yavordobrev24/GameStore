@@ -20,9 +20,9 @@ export default function Register() {
             placeholder="Email"
           />
           {(state?.errors?.email && (
-            <p className="error">{state.errors.email}</p>
+            <p className="text-red-600">{state.errors.email}</p>
           )) ||
-            (state?.message && <p className="error">{state.message}</p>)}
+            (state?.message && <p className="text-red-600">{state.message}</p>)}
         </section>
         <section className="flex flex-col gap-[0.4rem]">
           <label htmlFor="password">Password</label>
@@ -34,7 +34,7 @@ export default function Register() {
             placeholder="Password"
           />
           {state?.errors?.password && (
-            <div className="error">
+            <div className="text-red-600">
               <p>Password must:</p>
               <ul>
                 {state.errors.password.map((error) => (
@@ -54,7 +54,7 @@ export default function Register() {
             placeholder="Confirm password"
           />
           {state?.error && (
-            <div className="error">
+            <div className="text-red-600">
               <p>{state.error}</p>
             </div>
           )}

@@ -14,10 +14,6 @@
   transform: scale(1.01);
 }
 
-.error {
-  color: rgb(182, 44, 44);
-}
-
 .desktop {
   display: flex;
 }

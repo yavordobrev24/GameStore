@@ -29,7 +29,7 @@ export default function Login() {
             placeholder="Demo: 123456"
           />
         </section>
-        {state?.message && <p className="error">{state.message}</p>}
+        {state?.message && <p className="text-red-600">{state.message}</p>}
         <button className="button">Login</button>
       </form>
       <Link href="/user/register">
