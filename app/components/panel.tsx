@@ -22,7 +22,7 @@ export default function Panel({ game }: { game: Game }) {
       <Quantity quantity={quantity} setQuantity={setQuantity} />
       <div className="action-btns">
         <button
-          className="btn"
+          className="button"
           onClick={() =>
             addCartItem({
               id: game.id,

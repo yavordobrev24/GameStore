@@ -32,14 +32,14 @@
   padding: 1rem 1.2rem;
   width: 20vw;
 }
-.btn {
+.button {
   padding: 1em 2em;
   background-color: black;
   color: white;
   border-radius: 10px;
   transition: transform 100ms;
 }
-.btn:hover {
+.button:hover {
   transform: scale(1.01);
 }
 .search-results {
@@ -179,7 +179,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .cart-card img {
   max-width: 10%;
 }
-.remove-btn {
+.remove-button {
   position: absolute;
   right: 2rem;
   background-color: black;
@@ -188,7 +188,7 @@ input[type="number"]::-webkit-outer-spin-button {
   padding: 1rem 2rem;
   transition: 450ms;
 }
-.remove-btn:hover {
+.remove-button:hover {
   transform: scale(1.05);
 }
 @media (max-width: 1000px) {

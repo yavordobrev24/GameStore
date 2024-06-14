@@ -51,7 +51,7 @@ export default function Register() {
             </div>
           )}
         </section>
-        <button className="btn">Register</button>
+        <button className="button">Register</button>
       </form>
       <Link href="/user/login" className="w-fit">
         <p className="text-primary hover:underline ">

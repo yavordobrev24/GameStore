@@ -7,7 +7,7 @@ export default function CheckoutButton() {
   return (
     <>
       {storedGames.length > 0 && (
-        <button className="btn mt-10" onClick={clearCart}>
+        <button className="button mt-10" onClick={clearCart}>
           Checkout
         </button>
       )}

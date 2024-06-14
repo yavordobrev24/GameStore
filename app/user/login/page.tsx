@@ -28,7 +28,7 @@ export default function Login() {
           />
         </section>
         {state?.message && <p className="error">{state.message}</p>}
-        <button className="btn">Login</button>
+        <button className="button">Login</button>
       </form>
       <Link href="/user/register">
         <p className="text-primary hover:underline">Don't have an account?</p>
