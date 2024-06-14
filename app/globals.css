@@ -3,27 +3,13 @@
 @tailwind utilities;
 @refresh;
 
-nav.desktop {
+.desktop {
   display: flex;
 }
-nav.mobile {
+.mobile {
   display: none;
 }
-.slider {
-  height: 90vh;
-  position: relative;
-  left: 0;
-  margin-top: 0%;
-  width: 400%;
-  animation: slide 20s infinite alternate;
-}
-.slider-item {
-  float: left;
-  width: 25%;
-  height: 100%;
-  float: left;
-  object-position: center;
-}
+
 .card .img-holder {
   width: 14rem;
   aspect-ratio: 1/1;
@@ -239,12 +225,6 @@ input[type="number"]::-webkit-outer-spin-button {
   nav.desktop {
     display: none;
   }
-  .slider {
-    margin-top: 3rem;
-  }
-  .slider-item {
-    object-fit: cover;
-  }
 }
 @media (max-width: 610px) {
   .details {
@@ -261,31 +241,5 @@ input[type="number"]::-webkit-outer-spin-button {
 @media (max-width: 800px) {
   .cart-card {
     flex-direction: column;
-  }
-}
-@keyframes slide {
-  0% {
-    left: 0;
-  }
-  20% {
-    left: 0;
-  }
-  25% {
-    left: -100%;
-  }
-  45% {
-    left: -100%;
-  }
-  50% {
-    left: -200%;
-  }
-  70% {
-    left: -200%;
-  }
-  75% {
-    left: -300%;
-  }
-  100% {
-    left: -300%;
   }
 }
