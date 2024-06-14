@@ -10,20 +10,27 @@ export default function Register() {
     <main className="flex-1 flex flex-col mx-auto justify-center gap-2 item">
       <h2 className="text-3xl text-center">Register</h2>
       <form className="flex flex-col gap-3" action={action}>
-        <section className=" form-section">
+        <section className=" flex flex-col gap-[0.4rem]">
           <label htmlFor="email">Email</label>
-          <input type="text" id="email" name="email" placeholder="Email" />
+          <input
+            type="text"
+            id="email"
+            name="email"
+            className="w-[20vw] py-[1rem] px-[1.2rem] rounded border-2"
+            placeholder="Email"
+          />
           {(state?.errors?.email && (
             <p className="error">{state.errors.email}</p>
           )) ||
             (state?.message && <p className="error">{state.message}</p>)}
         </section>
-        <section className="form-section">
+        <section className="flex flex-col gap-[0.4rem]">
           <label htmlFor="password">Password</label>
           <input
             type="password"
             id="password"
             name="password"
+            className="w-[20vw] py-[1rem] px-[1.2rem] rounded border-2"
             placeholder="Password"
           />
           {state?.errors?.password && (
@@ -37,12 +44,13 @@ export default function Register() {
             </div>
           )}
         </section>
-        <section className="form-section">
+        <section className="flex flex-col gap-[0.4rem]">
           <label htmlFor="confirm-password">Confirm password</label>
           <input
             type="password"
             id="confirm-password"
             name="confirm-password"
+            className="w-[20vw] py-[1rem] px-[1.2rem] rounded border-2"
             placeholder="Confirm password"
           />
           {state?.error && (

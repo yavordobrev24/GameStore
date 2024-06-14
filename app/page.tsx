@@ -1,4 +1,4 @@
-import styles from "./app.module.css";
+import styles from "./page.module.css";
 import {
   faFutbol,
   faGun,

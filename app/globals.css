@@ -3,6 +3,21 @@
 @tailwind utilities;
 @refresh;
 
+.button {
+  padding: 1em 2em;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  transition: transform 300ms;
+}
+.button:hover {
+  transform: scale(1.01);
+}
+
+.error {
+  color: rgb(182, 44, 44);
+}
+
 .desktop {
   display: flex;
 }
@@ -20,27 +35,6 @@
 }
 .card:hover img {
   transform: scale(1.15);
-}
-.form-section {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-.form-section input {
-  border: 1px solid gray;
-  border-radius: 5px;
-  padding: 1rem 1.2rem;
-  width: 20vw;
-}
-.button {
-  padding: 1em 2em;
-  background-color: black;
-  color: white;
-  border-radius: 10px;
-  transition: transform 100ms;
-}
-.button:hover {
-  transform: scale(1.01);
 }
 .search-results {
   border-radius: 8px;
@@ -149,9 +143,6 @@ input[type="number"]::-webkit-outer-spin-button {
   outline: none;
   text-align: center;
 }
-.error {
-  color: rgb(182, 44, 44);
-}
 .cart-card {
   border: 1px solid black;
   min-height: 30vh;
@@ -192,10 +183,10 @@ input[type="number"]::-webkit-outer-spin-button {
   transform: scale(1.05);
 }
 @media (max-width: 1000px) {
-  nav.mobile {
+  .mobile {
     display: block;
   }
-  nav.desktop {
+  .desktop {
     display: none;
   }
 }
