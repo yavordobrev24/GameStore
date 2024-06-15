@@ -13,22 +13,10 @@
 .button:hover {
   transform: scale(1.01);
 }
-
 .section {
   max-width: 1200px;
   margin: 2rem auto;
   padding: 2rem;
-}
-.card .img-holder {
-  width: 14rem;
-  aspect-ratio: 1/1;
-  overflow: hidden;
-}
-.card img {
-  transition: all 0.3s;
-}
-.card:hover img {
-  transform: scale(1.15);
 }
 
 .quantity {
@@ -40,31 +28,8 @@
   display: flex;
   align-items: center;
 }
-.categories {
-  margin-top: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.categories a {
-  position: relative;
-  text-align: center;
-}
-.categories a::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  background-color: black;
-  width: 0%;
-  height: 1px;
-  transition: width 0.5s;
-}
-.categories a:hover::before {
-  width: 100%;
-}
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+.quantity input::-webkit-inner-spin-button,
+.quantity input::-webkit-outer-spin-button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -78,6 +43,19 @@ input[type="number"]::-webkit-outer-spin-button {
   outline: none;
   text-align: center;
 }
+
+.card .img-holder {
+  width: 14rem;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+.card img {
+  transition: all 0.3s;
+}
+.card:hover img {
+  transform: scale(1.15);
+}
+
 .cart-card {
   border: 1px solid black;
   min-height: 30vh;

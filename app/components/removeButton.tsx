@@ -1,7 +1,7 @@
 "use client";
 
-import { CartItem } from "../../lib/definitions";
-import { useStore } from "../../store";
+import { CartItem } from "../lib/definitions";
+import { useStore } from "../store";
 
 export default function RemoveButton({ cartItem }: { cartItem: CartItem }) {
   const removeCartItem = useStore((store) => store.removeCartItem);

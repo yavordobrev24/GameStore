@@ -3,7 +3,7 @@ import GameCard from "../components/gameCard";
 import pool from "@/postgres-db/db";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-
+import styles from "./page.module.css";
 async function getGames({
   searchParams,
 }: {
@@ -55,28 +55,27 @@ export default async function Games({
   return (
     <main className="flex-1">
       <section className="flex max-w-[1000px] py-12 mx-auto">
-        <div className="sidebar mr-10">
-          <div className="category">
-            <p className="text-2xl font-bold">Category</p>
-            <div className="categories">
-              <ul>
-                {searchParams.category &&
-                  categories.map((x: any) => (
-                    <li key={x.name}>
-                      <Link
-                        href={`/games?category=${x.name}`}
-                        className={`${
-                          searchParams.category == x.name ? "font-bold" : ""
-                        }`}
-                      >
-                        {x.name}
-                      </Link>
-                    </li>
-                  ))}
-              </ul>
-            </div>
+        <div className="mr-10">
+          <p className="text-2xl font-bold">Category</p>
+          <div className={styles["categories"]}>
+            <ul>
+              {searchParams.category &&
+                categories.map((x: any) => (
+                  <li key={x.name}>
+                    <Link
+                      href={`/games?category=${x.name}`}
+                      className={`${
+                        searchParams.category == x.name ? "font-bold" : ""
+                      }`}
+                    >
+                      {x.name}
+                    </Link>
+                  </li>
+                ))}
+            </ul>
           </div>
         </div>
+
         <ul className="flex gap-10 flex-wrap">
           {games.map((value: Game) => (
             <GameCard key={value.id} game={value} />
