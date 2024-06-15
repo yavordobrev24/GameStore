@@ -12,7 +12,7 @@ export default async function Header() {
 
   return (
     <header className="fixed top-0 z-10 bg-secondary w-full px-[10rem] py-[2rem] border-b-[1px] border-gray-300">
-      <nav className="flex justify-between desktop">
+      <nav className={`flex justify-between ${styles["desktop"]}`}>
         <p className="font-bold text-2xl">
           <Link href="/">
             Game<span className="text-purple-600">Store</span>
@@ -49,7 +49,7 @@ export default async function Header() {
           {session && <LogoutButton />}
         </ul>
       </nav>
-      <nav className="mobile">
+      <nav className={styles["mobile"]}>
         <div className="flex justify-between mb-3">
           <p className="font-bold text-2xl">
             <Link href="/">

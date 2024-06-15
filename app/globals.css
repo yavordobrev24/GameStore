@@ -19,14 +19,6 @@
   margin: 2rem auto;
   padding: 2rem;
 }
-
-.desktop {
-  display: flex;
-}
-.mobile {
-  display: none;
-}
-
 .card .img-holder {
   width: 14rem;
   aspect-ratio: 1/1;
@@ -38,8 +30,6 @@
 .card:hover img {
   transform: scale(1.15);
 }
-
-
 
 .details {
   padding: 1rem;
@@ -147,14 +137,6 @@ input[type="number"]::-webkit-outer-spin-button {
   max-width: 10%;
 }
 
-@media (max-width: 1000px) {
-  .mobile {
-    display: block;
-  }
-  .desktop {
-    display: none;
-  }
-}
 @media (max-width: 610px) {
   .details {
     flex-direction: column;
