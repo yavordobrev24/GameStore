@@ -15,11 +15,13 @@ export default async function GamePage({ params }: { params: Params }) {
 
   return (
     <>
-      <main className={`flex-1 flex ${styles["details"]}`}>
-        <section className={styles["details-img"]}>
+      <main
+        className={`flex flex-col md:flex-row gap-[1rem] w-[600px] mx-auto px-[2rem] mt-[5rem]`}
+      >
+        <section className={styles["details-img-container"]}>
           <img src={game.imageurl} alt={game.title} />
         </section>
-        <section className={"details-content"}>
+        <section className={styles["details-content"]}>
           <h1 className={styles["details-content-name"]}>{game.title}</h1>
           <p className={styles["details-content-description"]}>
             {game.description}

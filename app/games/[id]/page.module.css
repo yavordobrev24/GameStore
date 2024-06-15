@@ -1,22 +1,14 @@
-.details {
-  padding: 1rem;
-  max-width: 600px;
-  margin: 6rem auto 3rem;
-  display: flex;
-  gap: 1rem;
-  align-items: center;
+.details-img-container {
+  overflow: hidden;
+  max-width: 40%;
+  min-height: 100%;
 }
-.details-img {
-  width: 40rem;
-  height: 20rem;
-}
-.details-img img {
-  height: 100%;
-  width: 100%;
+.details-img-container img {
+  min-width: 100%;
   object-fit: cover;
+  min-height: 100%;
 }
-
-.details-content-price {
+.details-img .details-content-price {
   font-weight: bold;
   margin-top: 1rem;
 }
@@ -27,14 +19,7 @@
 }
 
 @media (max-width: 610px) {
-  .details {
-    flex-direction: column;
-    margin-top: 5rem;
-  }
-  .details-img {
-    width: 100%;
-  }
-  .details-img img {
+  .details-img-container img {
     object-fit: contain;
   }
 }
