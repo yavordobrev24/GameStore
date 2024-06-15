@@ -32,11 +32,6 @@
 .card:hover img {
   transform: scale(1.15);
 }
-.search-results {
-  border-radius: 8px;
-  color: black;
-  padding: 0.5em 1em;
-}
 .main-section {
   max-width: 1200px;
   margin: 3rem auto;
