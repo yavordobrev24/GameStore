@@ -7,7 +7,7 @@ import { getSession } from "../lib/session";
 export default async function Cart() {
   const session = await getSession();
   return (
-    <main className="flex-1 flex flex-col main-section text-center">
+    <main className="flex-1 flex flex-col section text-center">
       <section>
         <h2 className="text-3xl mb-10">Shopping Cart</h2>
         <CartList />

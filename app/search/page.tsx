@@ -23,7 +23,7 @@ export default async function Search({
 
   return (
     <main className="flex-1">
-      <section className="flex flex-col py-[2rem] main-section items-center">
+      <section className="flex flex-col py-[2rem] section items-center">
         <p className="rounded-lg text-black px-[0.5rem] py-[1rem]">
           <span className="font-semibold"> {games.length}</span> Results
         </p>

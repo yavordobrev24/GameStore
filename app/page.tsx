@@ -35,7 +35,7 @@ export default async function Home() {
         />
       </section>
       <Newest />
-      <section className="flex flex-col main-section py-[2rem] items-center">
+      <section className="flex flex-col section py-[2rem] items-center">
         <h3 className="text-4xl">Categories</h3>
         <div className={`${styles["icon-cards"]}`}>
           <Link href="/games?category=Action">
