@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import Header from "./components/header";
+import Header from "./components/header/header";
 import Footer from "./components/footer";
 import { config } from "@fortawesome/fontawesome-svg-core";
 

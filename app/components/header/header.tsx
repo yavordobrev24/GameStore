@@ -1,15 +1,11 @@
-import {
-  faArrowRightFromBracket,
-  faCartShopping,
-  faMagnifyingGlass,
-  faUser,
-} from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-import { getSession } from "../lib/session";
-import { searchGame } from "../actions";
-import LogoutButton from "./logoutButton";
-import CartLink from "./cartLink";
+import { getSession } from "../../lib/session";
+import { searchGame } from "../../actions";
+import LogoutButton from "../logoutButton";
+import CartLink from "../cartLink";
+import styles from "./header.module.css";
 
 export default async function Header() {
   const session = await getSession();
@@ -25,12 +21,12 @@ export default async function Header() {
         <form action={searchGame} className="min-w-[400px]  flex gap-[0.5rem]">
           <input
             type="text"
-            className="searchbar"
+            className={styles["searchbar"]}
             id="query"
             name="query"
-            placeholder="What is your favorite game?"
+            placeholder="Find your favourite game"
           />
-          <button className="search">
+          <button>
             <FontAwesomeIcon
               icon={faMagnifyingGlass}
               className="mx-2 hover:text-purple-600"
@@ -79,12 +75,12 @@ export default async function Header() {
         <form action={searchGame} className="flex min-w-[200px]">
           <input
             type="text"
-            className="searchbar"
+            className={styles["searchbar"]}
             id="query"
             name="query"
-            placeholder="What is your favorite game?"
+            placeholder="Find your favourite game"
           />
-          <button className="search">
+          <button>
             <FontAwesomeIcon
               icon={faMagnifyingGlass}
               className="mx-2 hover:text-purple-600"
