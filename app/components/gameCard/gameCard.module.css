@@ -1,0 +1,11 @@
+.card-img {
+  width: 14rem;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+.card-img img {
+  transition: all 0.3s;
+}
+.card:hover img {
+  transform: scale(1.15);
+}

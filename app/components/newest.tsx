@@ -1,5 +1,5 @@
 import pool from "@/postgres-db/db";
-import GameCard from "./gameCard";
+import GameCard from "./gameCard/gameCard";
 import { Game } from "../lib/definitions";
 
 async function getGames() {
