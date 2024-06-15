@@ -1,5 +1,5 @@
 import { Game } from "../lib/definitions";
-import GameCard from "../components/gameCard";
+import GameCard from "../components/gameCard/gameCard";
 import pool from "../../postgres-db/db";
 
 async function searchGames({
@@ -23,8 +23,10 @@ export default async function Search({
 
   return (
     <main className="flex-1">
-      <section className="flex flex-col py-[2rem] main-section items-center">
-        <p className="search-results ">Results for search: {games.length}</p>
+      <section className="flex flex-col py-[2rem] section items-center">
+        <p className="rounded-lg text-black px-[0.5rem] py-[1rem]">
+          <span className="font-semibold"> {games.length}</span> Results
+        </p>
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-5 ">
           {games.map((game: Game) => (
             <GameCard key={game.id} game={game} />

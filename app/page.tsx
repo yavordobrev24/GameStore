@@ -1,3 +1,4 @@
+import styles from "./page.module.css";
 import {
   faFutbol,
   faGun,
@@ -11,32 +12,32 @@ import Newest from "./components/newest";
 export default async function Home() {
   return (
     <main className="overflow-hidden flex-1">
-      <section className="slider shadow-md">
+      <section className={`${styles["slider"]} shadow-md`}>
         <img
-          className="slider-item"
+          className={styles["slider-item"]}
           src="https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000012332/ac4d1fc9824876ce756406f0525d50c57ded4b2a666f6dfe40a6ac5c3563fad9"
           alt=""
         />
         <img
-          className="slider-item"
+          className={styles["slider-item"]}
           src="https://www.nintendo.com/eu/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_Minecraft.jpg"
           alt=""
         />
         <img
-          className="slider-item"
+          className={styles["slider-item"]}
           src="https://image.api.playstation.com/vulcan/ap/rnd/202203/0911/VIB0SeEj9vT6DTv7P4thJLZi.jpg"
           alt=""
         />
         <img
-          className="slider-item"
+          className={styles["slider-item"]}
           src="https://image.api.playstation.com/vulcan/ap/rnd/202311/2015/45ab1e741439ba2e06782cfc09cd4e57467d436c5b84bc79.jpg"
           alt=""
         />
       </section>
       <Newest />
-      <section className="flex flex-col main-section py-[2rem] items-center">
+      <section className="flex flex-col section py-[2rem] items-center">
         <h3 className="text-4xl">Categories</h3>
-        <div className="icon-cards flex flex-wrap gap-10 mt-11">
+        <div className={`${styles["icon-cards"]}`}>
           <Link href="/games?category=Action">
             <FontAwesomeIcon icon={faGun} />
             Action

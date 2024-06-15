@@ -1,0 +1,25 @@
+.details-img-container {
+  overflow: hidden;
+  max-width: 40%;
+  min-height: 100%;
+}
+.details-img-container img {
+  min-width: 100%;
+  object-fit: cover;
+  min-height: 100%;
+}
+.details-img .details-content-price {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+.details-content-name {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  font-weight: bold;
+}
+
+@media (max-width: 610px) {
+  .details-img-container img {
+    object-fit: contain;
+  }
+}

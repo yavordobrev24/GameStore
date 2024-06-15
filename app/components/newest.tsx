@@ -1,5 +1,5 @@
 import pool from "@/postgres-db/db";
-import GameCard from "./gameCard";
+import GameCard from "./gameCard/gameCard";
 import { Game } from "../lib/definitions";
 
 async function getGames() {
@@ -11,7 +11,7 @@ export default async function Newest() {
   const games = await getGames();
 
   return (
-    <section className="flex flex-col items-center py-[2rem] main-section">
+    <section className="flex flex-col items-center py-[2rem] section">
       <h3 className="text-4xl font">Newest</h3>
       <ul className="flex gap-10 mt-10 flex-wrap">
         {games.slice(-4).map((value: Game) => (

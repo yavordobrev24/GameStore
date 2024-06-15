@@ -1,0 +1,72 @@
+.slider {
+  height: 90vh;
+  position: relative;
+  left: 0;
+  margin-top: 0%;
+  width: 400%;
+  animation: slide 20s infinite alternate;
+}
+.slider-item {
+  float: left;
+  width: 25%;
+  height: 100%;
+  float: left;
+  object-position: center;
+}
+.icon-cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  gap: 2rem;
+}
+.icon-cards a {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  color: black;
+  padding: 1rem 3rem;
+  border-radius: 5px;
+  gap: 1rem;
+  transition: 300ms;
+}
+.icon-cards a:hover {
+  background: #000;
+  color: white;
+}
+.icon-cards a svg {
+  font-size: 2rem;
+}
+@keyframes slide {
+  0% {
+    left: 0;
+  }
+  20% {
+    left: 0;
+  }
+  25% {
+    left: -100%;
+  }
+  45% {
+    left: -100%;
+  }
+  50% {
+    left: -200%;
+  }
+  70% {
+    left: -200%;
+  }
+  75% {
+    left: -300%;
+  }
+  100% {
+    left: -300%;
+  }
+}
+@media (max-width: 1000px) {
+  .slider {
+    margin-top: 3rem;
+  }
+  .slider-item {
+    object-fit: cover;
+  }
+}
