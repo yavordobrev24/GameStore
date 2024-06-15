@@ -161,18 +161,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .cart-card img {
   max-width: 10%;
 }
-.remove-button {
-  position: absolute;
-  right: 2rem;
-  background-color: black;
-  color: white;
-  border-radius: 8px;
-  padding: 1rem 2rem;
-  transition: 450ms;
-}
-.remove-button:hover {
-  transform: scale(1.05);
-}
+
 @media (max-width: 1000px) {
   .mobile {
     display: block;

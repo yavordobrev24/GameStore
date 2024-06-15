@@ -1,6 +1,6 @@
 import { CartItem } from "../lib/definitions";
 
-import RemoveButton from "./removeButton";
+import RemoveButton from "./removeButton/removeButton";
 import CartQuantity from "./cartQuantity";
 
 export default function CartCard({ cartItem }: { cartItem: CartItem }) {
