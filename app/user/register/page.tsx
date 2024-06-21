@@ -7,7 +7,7 @@ export default function Register() {
   const [state, action] = useFormState(register, undefined);
 
   return (
-    <main className="flex-1 flex flex-col mx-auto justify-center gap-2 item">
+    <main className=" mx-auto justify-center gap-2 w-[40%] xl:w-[20vw]">
       <h2 className="text-3xl text-center">Register</h2>
       <form className="flex flex-col gap-3" action={action}>
         <section className=" flex flex-col gap-[0.4rem]">
@@ -16,7 +16,7 @@ export default function Register() {
             type="text"
             id="email"
             name="email"
-            className="w-[20vw] py-[1rem] px-[1.2rem] rounded border-2"
+            className="py-[1rem] px-[1.2rem] rounded border-2"
             placeholder="Email"
           />
           {(state?.errors?.email && (
@@ -30,7 +30,7 @@ export default function Register() {
             type="password"
             id="password"
             name="password"
-            className="w-[20vw] py-[1rem] px-[1.2rem] rounded border-2"
+            className="py-[1rem] px-[1.2rem] rounded border-2"
             placeholder="Password"
           />
           {state?.errors?.password && (
@@ -50,7 +50,7 @@ export default function Register() {
             type="password"
             id="confirm-password"
             name="confirm-password"
-            className="w-[20vw] py-[1rem] px-[1.2rem] rounded border-2"
+            className="py-[1rem] px-[1.2rem] rounded border-2"
             placeholder="Confirm password"
           />
           {state?.error && (
@@ -61,11 +61,12 @@ export default function Register() {
         </section>
         <button className="button">Register</button>
       </form>
-      <Link href="/user/login" className="w-fit">
-        <p className="text-primary hover:underline ">
+      
+        <p >
           Already have an account?
+          <Link href="/user/login" className="text-primary hover:underline font-bold pl-1">Login</Link>
         </p>
-      </Link>
+
     </main>
-  );
+  )
 }
