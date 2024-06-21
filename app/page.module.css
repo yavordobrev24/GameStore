@@ -63,10 +63,8 @@
   }
 }
 @media (max-width: 1000px) {
-  .slider {
-    margin-top: 3rem;
-  }
   .slider-item {
     object-fit: cover;
   }
 }
+

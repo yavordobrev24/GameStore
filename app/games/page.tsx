@@ -1,6 +1,6 @@
 import { Game } from "../lib/definitions";
-import GameCard from "../components/gameCard/gameCard";
-import pool from "@/postgres-db/db";
+import GameCard from "@/components/gameCard/gameCard";
+import pool from "@/postgres/db";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import styles from "./page.module.css";
@@ -53,7 +53,7 @@ export default async function Games({
   const games = await getGames({ searchParams });
 
   return (
-    <main className="flex-1">
+    <main className="block">
       <section className="flex max-w-[1000px] py-12 mx-auto">
         <div className="mr-10">
           <p className="text-2xl font-bold">Category</p>
