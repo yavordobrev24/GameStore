@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import Header from "./components/header/header";
-import Footer from "./components/footer";
+import Header from "@/components/header/header";
+import Footer from "@/components/footer/footer";
 import { config } from "@fortawesome/fontawesome-svg-core";
 
 config.autoAddCss = false;
@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex flex-col min-h-screen mt-[6rem]">
+      <body className="flex flex-col min-h-screen">
         <Header />
         {children}
 

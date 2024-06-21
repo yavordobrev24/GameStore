@@ -7,7 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Newest from "./components/newest";
+import Newest from "@/components/newest/newest";
 
 export default async function Home() {
   return (

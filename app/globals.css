@@ -3,7 +3,15 @@
 @tailwind utilities;
 @refresh;
 
+main{
+  min-height: calc(100vh-192);
+  margin-top:103.2px;
+  display:flex;
+  flex-direction: column;
+  flex:1;
+}
 .button {
+  display:inline-block;
   padding: 1em 2em;
   background-color: black;
   color: white;
@@ -16,11 +24,10 @@
 .section {
   max-width: 1200px;
   margin: 2rem auto;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .quantity {
-  margin-top: 0.5rem;
   border: 1px solid rgb(193, 193, 193);
   width: fit-content;
   font-size: 1.2rem;
@@ -42,4 +49,10 @@
   width: 45px;
   outline: none;
   text-align: center;
+}
+@media (max-width:768px){
+  main{
+    min-height: calc(100vh-236);
+    margin-top:151.2px;
+    }
 }
