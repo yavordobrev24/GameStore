@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
-import Quantity from "./quantity";
-import { CartItem, Game } from "../lib/definitions";
-import { useStore } from "../store";
+import Quantity from "../quantity/quantity";
+import { CartItem, Game } from "@/app/lib/definitions"
+import { useStore } from "@/app/store"
 
 export default function Panel({ game }: { game: Game }) {
   const storedGame = useStore((store) => store.cart).find(

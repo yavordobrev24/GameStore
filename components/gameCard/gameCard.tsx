@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Game } from "../../lib/definitions";
+import { Game } from "@/app/lib/definitions";
 import styles from "./gameCard.module.css";
 
 export default function GameCard({ game }: { game: Game }) {

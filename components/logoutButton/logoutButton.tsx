@@ -1,6 +1,6 @@
 "use client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { logout } from "../actions";
+import { logout } from "@/app/actions";
 import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
 export default function LogoutButton() {

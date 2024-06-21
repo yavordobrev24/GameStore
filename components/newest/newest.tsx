@@ -1,6 +1,6 @@
-import pool from "@/postgres-db/db";
-import GameCard from "./gameCard/gameCard";
-import { Game } from "../lib/definitions";
+import pool from "@/postgres/db";
+import GameCard from "../gameCard/gameCard";
+import { Game } from "@/app/lib/definitions";
 
 async function getGames() {
   const res = await pool.query("SELECT * FROM games;");

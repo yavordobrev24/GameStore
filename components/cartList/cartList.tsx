@@ -1,7 +1,7 @@
 "use client";
-import { CartItem } from "../lib/definitions";
-import { useStore } from "../store";
-import CartCard from "./cartCard";
+import { CartItem } from "@/app/lib/definitions";
+import { useStore } from "@/app/store";
+import CartCard from "../cartCard/cartCard";
 
 export default function CartList() {
   const storedGames = useStore((store) => store.cart);
@@ -14,7 +14,7 @@ export default function CartList() {
           ))}
         </>
       ) : (
-        <p className="text-center text-gray-500 my-5">
+        <p className="text-center text-gray-500 mb-[2rem]">
           Your cart is currently empty.
         </p>
       )}

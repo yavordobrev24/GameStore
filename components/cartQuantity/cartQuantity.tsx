@@ -1,7 +1,7 @@
 "use client";
 
-import { useStore } from "../store";
-import { CartItem } from "../lib/definitions";
+import { useStore } from "@/app/store";
+import { CartItem } from "@/app/lib/definitions";
 
 export default function CartQuantity({ cartItemId }: { cartItemId: number }) {
   const storedGame = useStore((store) => store.cart).find((item: CartItem) => {

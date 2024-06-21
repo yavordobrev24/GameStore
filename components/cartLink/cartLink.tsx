@@ -2,7 +2,7 @@
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-import { useStore } from "../store";
+import { useStore } from "@/app/store";
 
 export default function CartLink() {
   const storedGames = useStore((store) => store.cart);
